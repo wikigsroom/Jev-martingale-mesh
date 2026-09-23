@@ -19,6 +19,14 @@ python scripts/run_fmz.py --params reports/fmz_v2/final_parameters.json --varian
 
 结束日期为UTC不包含该日的边界，因此`--end 2026-09-22`表示运行到9月21日23:59:59。主指标期望为：初始100U、期末172.61405995749513U、最大回撤17.08640859172561%、爆仓0次。浮点环境更换可能有很小的数值差异。
 
+上述是R1的5秒新闻延迟。后续按用户要求建立的[60秒复跑记录L60](../../reports/fmz_v2/news_delay_60s_20260923/report_zh.md)单独保存参数与结果，原R1不覆盖。复现L60：
+
+```powershell
+python scripts/run_fmz.py --params reports/fmz_v2/news_delay_60s_20260923/parameters.json --resolution 1s --start 2026-03-01 --end 2026-09-22 --out reports/fmz_v2/news_delay_60s_20260923/reproduce_60s
+```
+
+L60期望期末77.94420553213098U、净收益−22.05579446786902%、最大回撤25.2317499829148%、爆仓0次、账户回撤停机。新闻到达时间为可用时间后60秒；复用+5秒信息构造的原分数缓存，未重新推理或调参。
+
 单次回测输出JSON指标、每分钟权益CSV和发生动作的秒级汇总轨迹CSV。汇总轨迹不是逐订单交易所回执。最后清仓的成交费用已计入指标和权益，未单独成为轨迹行。
 
 复现现有回测只需要已处理行情、资金费和事件分数缓存。若需重做金融头训练、真实GPU推理或原始数据下载，使用[项目README](../../README.md)的共享数据/模型流程；不要把缓存回放称为重新训练。

@@ -6,6 +6,14 @@ GitHub使用两个分支：[main程序仓库](https://github.com/wikigsroom/Jev-
 
 方案已记录为 **FMZ-JEV-20260923-R1**：[文档总入口](docs/fmz-v2/README.md)、[方案与决策记录](docs/fmz-v2/strategy_record.md)、[JEV角色及效果说明](docs/fmz-v2/jev_role.md)、[复现和归档](docs/fmz-v2/reproduction.md)。JEV主要限制新闻发生后的追加与重开；止盈后的趋势判断由EMA模块负责。当前历史盈利结果对成本和消息延迟敏感，JEV尚未证明优于简单新闻暂停规则。
 
+**60秒新闻延迟复跑（FMZ-JEV-20260923-L60）**：按新要求，仅把延迟从5秒改为60秒，100U变为77.9442U，净收益−22.0558%，最大回撤25.2317%，模拟爆仓0次，5月23日触发账户回撤停机。[完整报告与轨迹](reports/fmz_v2/news_delay_60s_20260923/report_zh.md)、[60秒参数](reports/fmz_v2/news_delay_60s_20260923/parameters.json)。复用原JEV分数并延后交付，没有重新推理或调参；原R1的5秒参数及成绩保留为对照。
+
+```powershell
+python scripts/run_fmz.py --params reports/fmz_v2/news_delay_60s_20260923/parameters.json --resolution 1s --start 2026-03-01 --end 2026-09-22 --out reports/fmz_v2/news_delay_60s_20260923/reproduce_60s
+```
+
+复现原R1的5秒延迟基线：
+
 ```powershell
 python scripts/run_fmz.py --resolution 1s --start 2026-03-01 --end 2026-09-22 --out reports/fmz_v2/reproduce
 python scripts/run_fmz.py --variant no_jev --out reports/fmz_v2/reproduce_no_jev

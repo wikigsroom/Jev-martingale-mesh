@@ -1,0 +1,24 @@
+{
+  "passed": true,
+  "checks": {
+    "only_parameter_change_is_5_to_60_second_news_delay": true,
+    "frozen_code_model_predictions_and_minute_funding_data_unchanged": true,
+    "all_205_second_data_files_match_R1_sha256": true,
+    "baseline_metrics_and_equity_match_R1_sha256": true,
+    "new_run_exactly_matches_all_metrics_of_previous_60s_stress": true,
+    "continuous_205_days_and_17712000_seconds": true,
+    "minute_curve_and_decision_fill_fee_add_tp_totals_match": true,
+    "all_event_triggers_match_available_time_plus_60_seconds": true,
+    "cached_inputs_precede_delayed_delivery": true,
+    "last_closing_fill_followed_by_flat_equity_until_period_end": true,
+    "monthly_profits_sum_to_full_period_profit": true,
+    "trajectory_zip_roundtrip_verified": true
+  },
+  "curve_rows": 295200,
+  "decision_rows": 1041,
+  "eligible_event_timestamps": 976,
+  "threshold_trigger_timestamps": 836,
+  "halt_is_drawdown_not_liquidation": true,
+  "second_data_total_bytes": 171641222,
+  "note": "No engine or model changes. Original synthetic tests were not rerun; verification here is on the actual new replay and frozen input hashes."
+}
