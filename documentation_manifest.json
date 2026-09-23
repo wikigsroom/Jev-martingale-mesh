@@ -1,7 +1,7 @@
 {
-  "created_at_utc": "2026-09-23T05:06:07.589526+00:00",
+  "created_at_utc": "2026-09-23T05:41:13.017251+00:00",
   "source_repository": "https://github.com/wikigsroom/Jev-martingale-mesh",
-  "source_revision": "ac485d5dbca90ff9ad39df24afc21ba1b90e7562",
+  "source_revision": "d8e39df927d0a08f668afa570b141f9672e2b150",
   "source_branch": "main",
   "destination_branch": "docs",
   "files": [
@@ -18,7 +18,7 @@
     {
       "path": "README.md",
       "source_sha256": null,
-      "export_sha256": "f4455080bfe0f6939b3c3546f04f414208e0e0eb860a5509b8b016412a7f1971"
+      "export_sha256": "9eae2234b79290fda5a06b05b70b8a3d8dd00ebf8d1708df608473d5def8aae2"
     },
     {
       "path": "THIRD_PARTY_NOTICES/NanoJev-LICENSE.txt",
@@ -47,18 +47,18 @@
     },
     {
       "path": "docs/fmz-v2/README.md",
-      "source_sha256": "5758980a0e02bfdca91b37ebaae2937f40dc7b9907993d3d414bad02de9b1197",
-      "export_sha256": "774db5d788b50c336d98537009d96989f94eacd3c8c68193031cfe3dfbf61d8e"
+      "source_sha256": "0e5f2f5998ce2b819189550435524c210c88737a9e346ac8dae4a3df73dbab7f",
+      "export_sha256": "8677e53a30ea1eb5ba6f66bb3600dda82f4c0161b56ea011e4caca18a15f4966"
     },
     {
       "path": "docs/fmz-v2/jev_role.md",
       "source_sha256": "3a2a71750fafd59d01b12ae1ab75e07748044eba4dce0372f04717afd5ba8a53",
-      "export_sha256": "da6f844d94fcec8de0b001ddd78ab3f486975a3ed34d3c437ad68b1fb5d1ff9e"
+      "export_sha256": "c9d5b94503ab550cc926d2dec81c568bbcc673151095890adc11e6986e1fe6eb"
     },
     {
       "path": "docs/fmz-v2/reproduction.md",
-      "source_sha256": "165428bf1781f890a0e4c2c5a3aede8b4a088b65dcb009908cbfa7b3063d1298",
-      "export_sha256": "272e10859e7d70922b7873ad2f3cba2e73e550a9a7dd7742fac16f43edab7a0b"
+      "source_sha256": "0403d97d942a5b36b0e721283091142abc5d662192ff03ba7e15b024a01a55f2",
+      "export_sha256": "262fce96b3fedc9e54aa19efa0c2d9a2472b72d93c5ba85c821a5e11bbb98d2c"
     },
     {
       "path": "docs/fmz-v2/strategy_record.md",
@@ -68,7 +68,7 @@
     {
       "path": "docs/repository_layout.md",
       "source_sha256": "816e4fc536458611f4cd25a6bea4f1d3a89bf244177ca72d3270311d043d9826",
-      "export_sha256": "58d13285526b45fd855696370a9136c8784d8ab46510743382a11056950166d4"
+      "export_sha256": "6b270a88bb5690548f3179c0027156652f57a659f50e3cc9227c2fa8e1c78968"
     },
     {
       "path": "records/fmz-v2/2026-09-23-r1/manifest.json",
@@ -138,17 +138,67 @@
     {
       "path": "reports/fmz_v2/final_report_zh.html",
       "source_sha256": "0947ddfb773e1a289af8cc2ae37d9881012ece2f9b25edada16dae6b2bf30c69",
-      "export_sha256": "7046eaa7bf54e0c146bb6ff00f809bde19e84ede4b80733e57d75c27695bd13a"
+      "export_sha256": "49f46bd94ff3aed6914051068e74a976688bf0a4da6089cc3e56b4997d001fe0"
     },
     {
       "path": "reports/fmz_v2/final_report_zh.md",
       "source_sha256": "4ec73d596069b8c02fae198cf50bfa559aa36713d1395447388f204b13f554c3",
-      "export_sha256": "7e12df4fe82c623c3aecd05574525b064ea27892fd1337099ce0a1fbb891ef5a"
+      "export_sha256": "7850ebbe57246f393d3929d14d92f108d873d563f1cda852ae9798dcf109a6df"
     },
     {
       "path": "reports/fmz_v2/monthly_continuous.csv",
       "source_sha256": "4eced35d2a551c0d865762e48cbe4168176b668a7bc6f87bc89734c7e7401a7e",
       "export_sha256": "4eced35d2a551c0d865762e48cbe4168176b668a7bc6f87bc89734c7e7401a7e"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/audit.json",
+      "source_sha256": "6d5ba077a96034cee99e295e8929c773630b149d440b5d0e5c0bc3c16b408612",
+      "export_sha256": "6d5ba077a96034cee99e295e8929c773630b149d440b5d0e5c0bc3c16b408612"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/comparison.json",
+      "source_sha256": "426b042f0019f20a082f3e0bee0a7b1bccc0e55dbb4e1042ff70bed281119a50",
+      "export_sha256": "426b042f0019f20a082f3e0bee0a7b1bccc0e55dbb4e1042ff70bed281119a50"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/daily_continuous.csv",
+      "source_sha256": "2b71bd54cbcf30756b7046e500aa9c41075e9730c6b903dc5cf507252d3d5443",
+      "export_sha256": "2b71bd54cbcf30756b7046e500aa9c41075e9730c6b903dc5cf507252d3d5443"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/equity_comparison.png",
+      "source_sha256": "0558d0f93ef48d25f85e62a569f25c9fc11e6f895e5dfdc768b16e2bfb9dd3a5",
+      "export_sha256": "0558d0f93ef48d25f85e62a569f25c9fc11e6f895e5dfdc768b16e2bfb9dd3a5"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/equity_comparison.svg",
+      "source_sha256": "d8920fb144f2322459ae2b431c9b7b1a70714b1f93c985562ed70e1295378d35",
+      "export_sha256": "d8920fb144f2322459ae2b431c9b7b1a70714b1f93c985562ed70e1295378d35"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/full_1s.json",
+      "source_sha256": "621bcbae832421d91ede2ce7c85ac449b540f57ab7070b0b4b05ea7b8cf631bf",
+      "export_sha256": "621bcbae832421d91ede2ce7c85ac449b540f57ab7070b0b4b05ea7b8cf631bf"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/monthly_continuous.csv",
+      "source_sha256": "48c9779bbcecb6a9f45c11ab51345c40a0815ea9d5fa94101d56488fd148d692",
+      "export_sha256": "48c9779bbcecb6a9f45c11ab51345c40a0815ea9d5fa94101d56488fd148d692"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/parameters.json",
+      "source_sha256": "dbd35668fa07a62a03d88cd8cc39c97e6d50b1040b330f866dead61f895ee2de",
+      "export_sha256": "dbd35668fa07a62a03d88cd8cc39c97e6d50b1040b330f866dead61f895ee2de"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/report_zh.md",
+      "source_sha256": "5b3fafadfc146e430c20ddff8de0f3f87f84e3fe708f07b67e53c9c280182135",
+      "export_sha256": "d43c62dce3bb78805b16a2640c270f7d525e7d23fd67d587867643116924e694"
+    },
+    {
+      "path": "reports/fmz_v2/news_delay_60s_20260923/run_manifest.json",
+      "source_sha256": "013b0b103c3649a3b646a3545472d346c280ce83a2dd3f9fc01152b2d74d55a5",
+      "export_sha256": "013b0b103c3649a3b646a3545472d346c280ce83a2dd3f9fc01152b2d74d55a5"
     },
     {
       "path": "reports/fmz_v2/search_margin_verified/candidate_parameters.json",
@@ -193,7 +243,7 @@
     {
       "path": "reports/fmz_v2/source_review/review_zh.md",
       "source_sha256": "0db0efc257beb7fe5ed3e180817ce3c8a0c95f3804918bb262540f7a7b188b70",
-      "export_sha256": "7f5170b5b0fc3f66e31fc6a3dc204853035187dd62c3eefb6612825acc582e5c"
+      "export_sha256": "939cb90c5e53553bf712fa18c880b56de3027c779f56fbdcc5ebad2f10d07757"
     },
     {
       "path": "reports/fmz_v2/source_review/source_manifest.json",

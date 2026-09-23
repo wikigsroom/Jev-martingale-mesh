@@ -98,9 +98,9 @@ JEV负责把“新消息及已有行情”转成短期价格方向分数。外�
 
 ## 对应代码与原始记录
 
-- [dataset.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/src/jevmesh/dataset.py)：`prepare_event_questions()`定义当时可用输入和30秒标签。
-- [fmz_data.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/src/jevmesh/fmz_data.py)：`add_news()`形成突破分数、方向偏向及事件时间。
-- [fmz_engine.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/src/jevmesh/fmz_engine.py)：`update_controller()`处理EMA趋势；`fmz_core()`处理JEV动作、允许方向与下单约束。
+- [dataset.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/src/jevmesh/dataset.py)：`prepare_event_questions()`定义当时可用输入和30秒标签。
+- [fmz_data.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/src/jevmesh/fmz_data.py)：`add_news()`形成突破分数、方向偏向及事件时间。
+- [fmz_engine.py](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/src/jevmesh/fmz_engine.py)：`update_controller()`处理EMA趋势；`fmz_core()`处理JEV动作、允许方向与下单约束。
 - [final_parameters.json](../../reports/fmz_v2/final_parameters.json)：实际模式与阈值。
 - [evaluation.json](../../reports/fmz_v2/evaluation.json)、[event_ablation.json](../../reports/fmz_v2/event_ablation.json)：全部统计与同参数对照。
 - [single_event_runtime.json](../../data/audit/single_event_runtime.json)：单条真实推理测量。

@@ -18,7 +18,7 @@
 
 ## 2. 原策略检查与改造
 
-原文件为`参考内容/FMZ.COM/网格挂单加马丁倍数递增 (滚仓） (回归初心) (双向Origian) (Fiat)(Mulity)(WarningIndex) (Mesh).xml`，源文件SHA256为`8000bfb7b97f7b4c68320d631b5a73ec11cc58939e2addc5a9a3ec73078a60d5`，未改写原文件。详细逐项检查见[源码审查](source_review/review_zh.md)，可读源码副本见[original.js](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/reports/fmz_v2/source_review/original.js)。
+原文件为`参考内容/FMZ.COM/网格挂单加马丁倍数递增 (滚仓） (回归初心) (双向Origian) (Fiat)(Mulity)(WarningIndex) (Mesh).xml`，源文件SHA256为`8000bfb7b97f7b4c68320d631b5a73ec11cc58939e2addc5a9a3ec73078a60d5`，未改写原文件。详细逐项检查见[源码审查](source_review/review_zh.md)，可读源码副本见[original.js](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/reports/fmz_v2/source_review/original.js)。
 
 原策略保留部分：双向开仓；每侧固定首次开仓锚点；线性价差的逆势加仓；未取整数量按ratio递增；按全侧均价止盈；另一侧层数过深则限制重新开仓；单侧名义额上限。上一版程序使用的“以上一次加仓价为中心”结构与本文件不同，因此上一轮负收益报告仍保留，不能直接替代本次结论。
 

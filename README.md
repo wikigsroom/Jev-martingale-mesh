@@ -1,6 +1,6 @@
 # Jev Martingale Mesh · 研究文档
 
-这是独立的`docs`分支。程序与测试见[main分支](https://github.com/wikigsroom/Jev-martingale-mesh/tree/main)，本次文档对应程序提交[`ac485d5dbca9`](https://github.com/wikigsroom/Jev-martingale-mesh/commit/ac485d5dbca90ff9ad39df24afc21ba1b90e7562)。
+这是独立的`docs`分支。程序与测试见[main分支](https://github.com/wikigsroom/Jev-martingale-mesh/tree/main)，本次文档对应程序提交[`d8e39df927d0`](https://github.com/wikigsroom/Jev-martingale-mesh/commit/d8e39df927d0a08f668afa570b141f9672e2b150)。
 
 | 入口 | 内容 |
 | --- | --- |

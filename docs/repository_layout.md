@@ -23,7 +23,7 @@ python -m pip install -e ".[test,report]"
 python -m pytest -q
 ```
 
-测试使用合成数据，可在未下载行情与模型时运行。实际历史回测仍需准备`data/processed`；重新训练/推理还需要模型权重。下载与准备流程见[项目README](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/README.md)。
+测试使用合成数据，可在未下载行情与模型时运行。实际历史回测仍需准备`data/processed`；重新训练/推理还需要模型权重。下载与准备流程见[项目README](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/README.md)。
 
 禁止使用Docker、WSL等OS虚拟化环境；本项目按原生Windows方式运行。
 
@@ -31,7 +31,7 @@ python -m pytest -q
 
 保留代码、测试、文档、原FMZ参考文件、第三方许可、正式3000组搜索、最终参数、冻结哈希、收益指标、成本/延迟压力失败和事件规则对照。R1 ZIP保留该次代码及完整权益轨迹，防止后续试验覆盖历史结果。
 
-行情原始数据、处理数据、模型权重、缓存和本机凭据不纳入Git。重复的早期探索目录、大型权益/动作CSV也不直接纳入Git；R1完整轨迹在[快照ZIP](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/records/fmz-v2/2026-09-23-r1/fmz-jev-20260923-r1.zip)中，或可从数据重算。最终报告引用的分月汇总和正式搜索表仍被保留。
+行情原始数据、处理数据、模型权重、缓存和本机凭据不纳入Git。重复的早期探索目录、大型权益/动作CSV也不直接纳入Git；R1完整轨迹在[快照ZIP](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/records/fmz-v2/2026-09-23-r1/fmz-jev-20260923-r1.zip)中，或可从数据重算。最终报告引用的分月汇总和正式搜索表仍被保留。
 
 `.gitattributes`禁止自动转换换行符，以保持研究证据、参数和源代码的SHA256。Git整理不会重写R1归档及旧冻结记录。
 

@@ -1,6 +1,6 @@
 # 所提供 FMZ 古典策略：代码核对与BTC改造边界
 
-检查对象是用户提供的584行FMZ导出文件，源码420行，SHA256为`8000bfb7b97f7b4c68320d631b5a73ec11cc58939e2addc5a9a3ec73078a60d5`。原文件未改写。便于阅读的副本为[original.js](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/reports/fmz_v2/source_review/original.js)，参数与历史回测设置分别保存在同目录JSON中。
+检查对象是用户提供的584行FMZ导出文件，源码420行，SHA256为`8000bfb7b97f7b4c68320d631b5a73ec11cc58939e2addc5a9a3ec73078a60d5`。原文件未改写。便于阅读的副本为[original.js](https://github.com/wikigsroom/Jev-martingale-mesh/blob/d8e39df927d0a08f668afa570b141f9672e2b150/reports/fmz_v2/source_review/original.js)，参数与历史回测设置分别保存在同目录JSON中。
 
 ## 原策略实际做了什么
 
