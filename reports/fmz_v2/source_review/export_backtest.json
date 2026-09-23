@@ -1,0 +1,35 @@
+{
+  "start": "2023-11-09 00:00:00",
+  "end": "2024-11-08 00:00:00",
+  "period": "1m",
+  "basePeriod": "1m",
+  "args": "[[\"baseSpacings\",0.05],[\"baseAmountRate\",0.02],[\"ratio\",1.25],[\"interval\",500],[\"profitTarget\",0.05],[\"MarginLevel\",20],[\"cutlosssleep\",0],[\"baseAmountMini\",20]]",
+  "exchanges": [
+    {
+      "eid": "Futures_Binance",
+      "currency": "ARB_USDT",
+      "balance": 5000
+    }
+  ],
+  "accountBalance": 5000,
+  "accountFee": [
+    0.03,
+    0.03
+  ],
+  "accountFeeMin": 0,
+  "btDepthDeep": 20,
+  "btFaultTolerant": 0.5,
+  "btFeeder": "local",
+  "btHistoryMode": "0",
+  "btMaxBarLen": 300,
+  "btMaxChartLogs": 3000,
+  "btMaxProfitLogs": 8000,
+  "btMaxRuntimeLogs": 800000,
+  "btNetDelay": 200,
+  "btOrder": "0",
+  "btSlipPoint": 0,
+  "btTradesMode": "0",
+  "logEvent": false,
+  "eid": "Futures_Binance",
+  "symbol": "ARB_USDT"
+}

@@ -1,0 +1,19 @@
+{
+  "passed": true,
+  "checks": {
+    "frozen_sources_and_parameters": true,
+    "curve_and_trace_selected": true,
+    "curve_and_trace_no_jev": true,
+    "curve_and_trace_no_trend": true,
+    "curve_and_trace_no_opposite_close": true,
+    "curve_and_trace_original_adapted": true,
+    "continuous_monthly_profit_reconciles": true,
+    "3000_unique_candidates": true,
+    "event_inputs_precede_decisions": true,
+    "report_local_links_exist": true,
+    "user_original_source_unchanged": true,
+    "liquidation_exercised_by_adverse_cases": true
+  },
+  "report_sha256": "4ec73d596069b8c02fae198cf50bfa559aa36713d1395447388f204b13f554c3",
+  "evaluation_sha256": "4fedc4105f17d778fcf12e688f34377a6d73a47640a176613e797fac26a7e297"
+}

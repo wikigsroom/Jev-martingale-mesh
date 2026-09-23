@@ -1,0 +1,9 @@
+{
+  "passed": true,
+  "verified_at_utc": "2026-09-23T04:36:25.677515+00:00",
+  "record_id": "FMZ-JEV-20260923-R1",
+  "archive_sha256": "20ba8671c68faab8dd29bda149179defefa01dfb058ffbfa57c49b75be99ef56",
+  "manifest_sha256": "46ec1f3aead8ca9c2b8a093247095060f0229678ac40d0010a60fbdceed0e5c2",
+  "archived_files_verified": 317,
+  "external_dependencies_verified": 766
+}

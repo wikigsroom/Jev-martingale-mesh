@@ -1,0 +1,10 @@
+# Frozen research files have SHA256 receipts; retain their exact bytes.
+# This also overrides machine-specific core.autocrlf settings.
+* -text
+*.py diff=python
+*.png binary
+*.zip binary
+*.pkl binary
+*.npz binary
+*.pt binary
+*.safetensors binary

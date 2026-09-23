@@ -1,0 +1,33 @@
+{
+  "source": "D:\\dev\\jev-mesh\\参考内容\\FMZ.COM\\网格挂单加马丁倍数递增 (滚仓） (回归初心) (双向Origian) (Fiat)(Mulity)(WarningIndex) (Mesh).xml",
+  "sha256": "8000bfb7b97f7b4c68320d631b5a73ec11cc58939e2addc5a9a3ec73078a60d5",
+  "source_lines": 584,
+  "code_lines": 420,
+  "export_symbol": "ARB_USDT",
+  "export_capital": 5000,
+  "backtest_overrides": {
+    "baseSpacings": 0.05,
+    "baseAmountRate": 0.02,
+    "ratio": 1.25,
+    "interval": 500,
+    "profitTarget": 0.05,
+    "MarginLevel": 20,
+    "cutlosssleep": 0,
+    "baseAmountMini": 20
+  },
+  "defaults": {
+    "baseSpacings": 0.05,
+    "baseAmountRate": 0.03,
+    "ratio": 1.25,
+    "interval": 2000,
+    "symbol": "swap",
+    "profitTarget": 0.05,
+    "MarginLevel": 30,
+    "priceDecimal": 2,
+    "amountDecimal": 2,
+    "warningIndex": 3,
+    "maxLoss": 3,
+    "cutlosssleep": 0,
+    "baseAmountMini": 10
+  }
+}

@@ -1,0 +1,24 @@
+# FMZ + NanoJev 方案记录
+
+记录编号：**FMZ-JEV-20260923-R1**。研究对象为用户提供的FMZ古典双向固定锚点网格，选中候选编号1623。状态：**历史回测研究版本；基础成本下盈利，高成本及消息延迟压力未通过**。
+
+| 文档 | 内容 |
+| --- | --- |
+| [方案记录](strategy_record.md) | 约束、完整参数入口、状态逻辑、选参过程、正反证据与决策记录 |
+| [JEV的角色与实际作用](jev_role.md) | 输入、输出、触发规则、与趋势/硬风控的分工、对照实验结论 |
+| [复现与归档说明](reproduction.md) | 可执行命令、结果口径、文件校验及后续修改方式 |
+| [完整研究报告](../../reports/fmz_v2/final_report_zh.md) | 全部收益、分月损益、压力测试、模型评估和数据局限 |
+| [原FMZ代码审查](../../reports/fmz_v2/source_review/review_zh.md) | 原代码逐项问题、模拟复现及BTC适配边界 |
+
+## 当前已确认的事实
+
+- 2026-03-01至2026-09-21 UTC，单一100 USDT账户连续回放，净收益 **+72.6141%**，期末 **172.6141 USDT**，最大回撤 **17.0864%**，模拟爆仓0次。
+- 同参数关闭JEV为 **−7.5404%**；每条新闻固定暂停的规则对照为 **+87.7577%**。收益差不能证明模型本身具备预测优势。
+- 手续费加倍且市价滑点10bp为 **−21.5321%**；消息延迟60秒为 **−22.0558%**。
+- 这是205个完整日，不是完整的3—9月七个月。没有真实下单；生产持仓恢复和交易所执行适配尚未实现。
+
+## 可追溯记录
+
+[参数](../../reports/fmz_v2/final_parameters.json)、[模型/代码/参数冻结](../../reports/fmz_v2/selection_freeze.json)、[回测指标](../../reports/fmz_v2/evaluation.json)、[事件规则对照](../../reports/fmz_v2/event_ablation.json)、[高成本候选筛选](../../reports/fmz_v2/cost_screen.json)、[交付核对](../../reports/fmz_v2/delivery_audit.json)均保留。
+
+本版另保存[归档清单](../../records/fmz-v2/2026-09-23-r1/manifest.json)和[代码、文档与结果快照](https://github.com/wikigsroom/Jev-martingale-mesh/blob/ac485d5dbca90ff9ad39df24afc21ba1b90e7562/records/fmz-v2/2026-09-23-r1/fmz-jev-20260923-r1.zip)。快照不重复打包大体积市场原始数据和模型权重；清单记录其本地位置及SHA256。它保留当前版本，后续试验应使用新的记录编号。
