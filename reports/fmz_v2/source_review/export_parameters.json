@@ -1,0 +1,111 @@
+{
+  "args": {
+    "groups": [],
+    "parameters": [
+      {
+        "type": "number",
+        "name": "baseSpacings",
+        "label": "加仓距离",
+        "description": "",
+        "default": 0.05,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "baseAmountRate",
+        "label": "基础仓位下单量USD",
+        "description": "",
+        "default": 0.03,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "ratio",
+        "label": "仓位增长系数",
+        "description": "",
+        "default": 1.25,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "interval",
+        "label": "轮询间隔",
+        "description": "",
+        "default": 2000,
+        "required": true
+      },
+      {
+        "type": "string",
+        "name": "symbol",
+        "label": "合约代码",
+        "description": "",
+        "default": "swap",
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "profitTarget",
+        "label": "目标利润差价Percentage",
+        "description": "",
+        "default": 0.05,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "MarginLevel",
+        "label": "杠杆设置",
+        "description": "",
+        "default": 30,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "priceDecimal",
+        "label": "tofixed decimal",
+        "description": "",
+        "default": 2,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "amountDecimal",
+        "label": "amountDecimal",
+        "description": "",
+        "default": 2,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "warningIndex",
+        "label": "warningIndex",
+        "description": "",
+        "default": 3,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "maxLoss",
+        "label": "maxLoss",
+        "description": "",
+        "default": 3,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "cutlosssleep",
+        "label": "cutlosssleep",
+        "description": "",
+        "default": 0,
+        "required": true
+      },
+      {
+        "type": "number",
+        "name": "baseAmountMini",
+        "label": "下单最小值",
+        "description": "",
+        "default": 10,
+        "required": false
+      }
+    ]
+  }
+}

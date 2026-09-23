@@ -1,0 +1,11 @@
+{
+  "single_event_warm_latency_ms": 105.89220002293587,
+  "max_probability_difference_to_batch": 0.00031071901321411133,
+  "predictions": {
+    "p_up": 0.15798477828502655,
+    "p_range": 0.6780492067337036,
+    "p_down": 0.16396595537662506,
+    "p_breakout": 0.3219507336616516
+  },
+  "input_scope": "One event, three candidates; includes tokenizer but excludes source/network/order transport"
+}

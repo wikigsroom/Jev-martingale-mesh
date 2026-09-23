@@ -1,0 +1,22 @@
+[
+  {
+    "kind": "klines",
+    "period": "2026-06-29",
+    "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-06-29.zip",
+    "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-06-29.zip",
+    "status": 200,
+    "size": 62731,
+    "sha256": "12677e18b6cc6575316011203ee167ad6b8e9e5d224c0aea4b46f87db13f9d9a",
+    "checksum_valid": true
+  },
+  {
+    "kind": "markPriceKlines",
+    "period": "2026-06-29",
+    "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-06-29.zip",
+    "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-06-29.zip",
+    "status": 200,
+    "size": 35364,
+    "sha256": "200e2ef30a86e9f91c011dae30d864f73c8480fddecc73ea227958596f6cd11c",
+    "checksum_valid": true
+  }
+]

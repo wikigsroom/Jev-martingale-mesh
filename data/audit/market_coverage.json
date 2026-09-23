@@ -1,0 +1,11 @@
+{
+  "bars": 295200,
+  "start": "2026-03-01T00:00:00+00:00",
+  "end_exclusive": "2026-09-22T00:00:00+00:00",
+  "gaps": [],
+  "funding_records": 616,
+  "funding_last": "2026-09-22T00:00:00+00:00",
+  "price_min": 57758.6,
+  "price_max": 87385.1,
+  "market_sha256": "c0d71682de52fed5815be38f8cbe0d309b2cc30ac0360351604c023fdb3cd378"
+}

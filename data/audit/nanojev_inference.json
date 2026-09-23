@@ -1,0 +1,14 @@
+{
+  "release": "C-Tianyu/NanoJev unified-games-v1",
+  "weight_sha256": "f68c47d66998231b86b7e91b4ed5e82ae23acf104c8b7cd6d165c3ac7b7ffe1b",
+  "device": "NVIDIA GeForce RTX 3060",
+  "torch": "2.10.0+cu126",
+  "precision": "BF16 backbone, float32 choice head",
+  "questions": 976,
+  "max_tokens_per_candidate": 289,
+  "batch_questions": 3,
+  "batch_latency_p50_ms": 307.0037999423221,
+  "batch_latency_p95_ms": 398.3846999704838,
+  "scope": "Tokenized batch GPU inference only; excludes publication/transport/tokenization/order latency",
+  "feature_input_sha256": "01b55da1fcba6ddf146aaf8bb93b3d8ce7eafbb09874e952e19eacbb64ed8207"
+}

@@ -1,0 +1,15 @@
+{
+  "kind": "aggTrades",
+  "period": "2026-08-03",
+  "url": "https://data.binance.vision/data/futures/um/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2026-08-03.zip",
+  "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\aggTrades\\BTCUSDT\\BTCUSDT-aggTrades-2026-08-03.zip",
+  "status": 200,
+  "size": 12769235,
+  "sha256": "60042cd468c5527371c127be00e92a2a18f20b1269452964fb41e9b267a73abc",
+  "checksum_valid": true,
+  "trades": 1027925,
+  "seconds": 86400,
+  "no_trade_seconds": 2934,
+  "elapsed_seconds": 4.96,
+  "processed_sha256": "c6170fd690c284a75154485e583b617846a24b6e08914003a0161ec0da8cb71a"
+}

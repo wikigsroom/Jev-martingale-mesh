@@ -1,0 +1,14 @@
+{
+  "events": 976,
+  "label_definition": "next 30 one-second aggregate-trade bars close return from first post-receipt open; three classes with threshold=max(0.03%, past 30-min 1m std*sqrt(0.5))",
+  "train_end": "2026-06-01",
+  "head_validation_end": "2026-07-01",
+  "strategy_validation_end": "2026-09-01",
+  "holdout_start": "2026-09-01",
+  "warning": "This is a price-regime proxy. It is neither an observed causal news effect nor a trained conditional grid-liquidation probability.",
+  "label_counts": {
+    "0": 108,
+    "1": 744,
+    "2": 124
+  }
+}

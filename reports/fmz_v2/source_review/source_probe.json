@@ -1,0 +1,58 @@
+{
+  "fresh_btc_orders": [
+    {
+      "direction": "buy",
+      "price": -1,
+      "amount": 0
+    },
+    {
+      "direction": "sell",
+      "price": -1,
+      "amount": 0
+    }
+  ],
+  "restart_orders": [
+    {
+      "direction": "buy",
+      "price": 0,
+      "amount": 3.75
+    },
+    {
+      "direction": "closebuy",
+      "price": 63000,
+      "amount": 0.002
+    },
+    {
+      "direction": "sell",
+      "price": -1,
+      "amount": 0
+    },
+    {
+      "direction": "buy",
+      "price": -6000,
+      "amount": 4.69
+    },
+    {
+      "direction": "closebuy",
+      "price": 63000,
+      "amount": 0.002
+    },
+    {
+      "direction": "sell",
+      "price": -1,
+      "amount": 0
+    }
+  ],
+  "index_after_two_rejected_calls": 2,
+  "cut_sleeps": [
+    0,
+    259200000,
+    2000
+  ],
+  "assertions": {
+    "fresh_order_rounded_to_zero": true,
+    "restart_has_nonpositive_limit": true,
+    "index_advances_on_rejected_order": true,
+    "long_cut_blocks_for_72_hours": true
+  }
+}

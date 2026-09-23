@@ -1,0 +1,626 @@
+{
+  "queried_at": "2026-09-22T19:26:19.188229+00:00",
+  "receipts": [
+    {
+      "kind": "fundingRate",
+      "period": "2026-04",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-04.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-04.zip",
+      "status": 200,
+      "size": 960,
+      "sha256": "51cdeb4de7d5ef1d4eece80b6115e391bdf7a2d0803bf9ad8371ab23340b22d3",
+      "checksum_valid": true
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-03",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-03.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-03.zip",
+      "status": 200,
+      "size": 1008,
+      "sha256": "5c069d5e9597a44fd0e213395082e59ff223fb99c9eab3a2a5a2a5622ba7867c",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-03",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-03.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-03.zip",
+      "status": 200,
+      "size": 1085521,
+      "sha256": "7731b4b15be1e59eb80422e7eee0067af124c42804c5e575e4cf5ed508d94687",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-03",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-03.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-03.zip",
+      "status": 200,
+      "size": 1911731,
+      "sha256": "c472a865f230bf1b5b17e124770a83c083144e3e11a115733288fb8f3e3b8baa",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-04",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-04.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-04.zip",
+      "status": 200,
+      "size": 1020190,
+      "sha256": "a1655f959e24c73a010b949649d45fcb2854bb9e2f5fe8e998269eb6ad4585e4",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-04",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-04.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-04.zip",
+      "status": 200,
+      "size": 1810071,
+      "sha256": "515b86570f0c6924f6dc2cf90589d3db90f3de9c6bfd9a22dde0429995dc5405",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-06",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-06.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-06.zip",
+      "status": 200,
+      "size": 1838455,
+      "sha256": "9b214199eb5063585c7ed0f59ba19323326d68ac024b85106713989399204490",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-05",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-05.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-05.zip",
+      "status": 200,
+      "size": 1036489,
+      "sha256": "c9e4475e8762b4e52b899785deca52bceb0efb9bf08bd411b3147cd5e1da5e25",
+      "checksum_valid": true
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-05",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-05.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-05.zip",
+      "status": 200,
+      "size": 980,
+      "sha256": "445b65fd6b17bfcfb5e4d035db29fad34f729fa078f0449024db42621be84e6e",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-06",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-06.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-06.zip",
+      "status": 200,
+      "size": 999777,
+      "sha256": "5d5d8b86efbe709e034409634347a161183e7c0df3854f8d96c9778dc1c923ba",
+      "checksum_valid": true
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-06",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-06.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-06.zip",
+      "status": 200,
+      "size": 964,
+      "sha256": "cff97ce688329592bccbbf5873b5c7021649e093f5f5806e332c5b4fb7fd6a00",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-05",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-05.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-05.zip",
+      "status": 200,
+      "size": 1845894,
+      "sha256": "d91548e94220d5211bb32447cc4b604ee266d145f2092edc5ec613328cbbc20a",
+      "checksum_valid": true
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-07",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-07.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-07.zip",
+      "status": 200,
+      "size": 914,
+      "sha256": "e36fcc66f493d7d9ec348c852fc22e9f318c79cf7adae17398a3994ae0adc41e",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-07",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-07.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-07.zip",
+      "status": 200,
+      "size": 1844583,
+      "sha256": "f18440bb58f0c7e1ff63cbb906132002877c4914540c8aebab920da6937cff73",
+      "checksum_valid": true
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-08",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-08.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-08.zip",
+      "status": 200,
+      "size": 896,
+      "sha256": "7c108b3a02bd6dc7345ca7323e3a49664edcea0afdcf780ffb3b44762c45a964",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-07",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-07.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-07.zip",
+      "status": 200,
+      "size": 1022569,
+      "sha256": "5bb16a0707eef96d648480ab45943f25b27425154b2ccb881c200cfd51e594ed",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-08",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-08.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-08.zip",
+      "status": 200,
+      "size": 1011901,
+      "sha256": "3bd0556d903ce14f833ed58c78fd8d3309bc1a3804bb401c9fa2dd9d902f2c37",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-08",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-08.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-08.zip",
+      "status": 200,
+      "size": 1817920,
+      "sha256": "adfd0846ea580681aeb18a6bdf06660dcfcc1a7b6819ea2eecfc3c53240ec67a",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-01",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-01.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-01.zip",
+      "status": 200,
+      "size": 61867,
+      "sha256": "a856e033ceee252f4e3a262a7262a3f60a8f97138794b5fce4ec15d9c66b480e",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-06",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-06.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-06.zip",
+      "status": 200,
+      "size": 57955,
+      "sha256": "75eeef140b07d21a16eee1a9708738b60b1a72dda0d37e7515fc4a32dffd93e0",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-02",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-02.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-02.zip",
+      "status": 200,
+      "size": 61691,
+      "sha256": "38fc36d008360cb3d8a3c6fafac9dc754e1619d7832a8587e00409899522bdf9",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-04",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-04.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-04.zip",
+      "status": 200,
+      "size": 61520,
+      "sha256": "5b5bbd3711f1f732e153a4deaa8bc51916850fd7bfa805e9d85c5686403d8e4c",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-03",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-03.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-03.zip",
+      "status": 200,
+      "size": 62921,
+      "sha256": "f6b1620e5c52f30d2f498e1681775f152296d2ce52dca5c2ae35d402ab9716db",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-05",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-05.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-05.zip",
+      "status": 200,
+      "size": 56850,
+      "sha256": "af5938c8d23be0f6bdea905ed847b0675c67d1f4b24e8c43832c224cc8b92f99",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-07",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-07.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-07.zip",
+      "status": 200,
+      "size": 59965,
+      "sha256": "4d83f583ba355f29a962e588e5174185bf40897320d1e3cee928040e7f2e159d",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-10",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-10.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-10.zip",
+      "status": 200,
+      "size": 61254,
+      "sha256": "ff62872b7c0f5c756b8454481d3a0f080d93eb082e18df058e4fe7589dc0a994",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-09",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-09.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-09.zip",
+      "status": 200,
+      "size": 61727,
+      "sha256": "cc47f3d39f6974d88e4c348018bfff70b02419274224eb5ae3e5cc80b64f582c",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-08",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-08.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-08.zip",
+      "status": 200,
+      "size": 61281,
+      "sha256": "ad03f5ae286bf20186fb0ef7bf5b836bef2f30eedae8f8915ba6436a448fe778",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-11",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-11.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-11.zip",
+      "status": 200,
+      "size": 61368,
+      "sha256": "08b5af388d100828d5b5fd9c42bcb83bedc64c69e36b671b4361f3fc0d9e48de",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-12",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-12.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-12.zip",
+      "status": 200,
+      "size": 55165,
+      "sha256": "ca475f250f36080108b21ab83a737c468c302d7f1d5a30081e3a1200296dfa12",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-15",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-15.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-15.zip",
+      "status": 200,
+      "size": 62717,
+      "sha256": "8893455ad98126ec4e6bfca010f701388a188c68715a0f33f686bde60d24430c",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-13",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-13.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-13.zip",
+      "status": 200,
+      "size": 57132,
+      "sha256": "add855eb76c91c57e1ea425ae3c9fbc953af1e87a906bdf4d290577bb9943456",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-14",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-14.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-14.zip",
+      "status": 200,
+      "size": 62147,
+      "sha256": "69314932ca1a6aa0f2a45e5b0d0c271a27401f48042fde67414f6ab5a0cdfdff",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-17",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-17.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-17.zip",
+      "status": 200,
+      "size": 60729,
+      "sha256": "24aa9f01305f04779bf0e2bd27aff0008bd08a6213addc46a55a86236d9ba549",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-16",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-16.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-16.zip",
+      "status": 200,
+      "size": 61663,
+      "sha256": "503b30763484771e6d9031ee7c4103fec765da96803d6ed10f74d39aedcb0724",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-18",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-18.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-18.zip",
+      "status": 200,
+      "size": 62258,
+      "sha256": "60b3135d6d8363acc65f85de8eed32d37c48ec6668176f4ca16113f372f62dce",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-22",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-22.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-22.zip",
+      "status": 404
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-20",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-20.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-20.zip",
+      "status": 200,
+      "size": 59998,
+      "sha256": "ab02c3ac68a1cdf577f6f1ba22440169e690bcb1cdaae6fdaea50c43209049ed",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-19",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-19.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-19.zip",
+      "status": 200,
+      "size": 59294,
+      "sha256": "f0f6a47bf03e405577ae9c3f33d8afb624d60b2587d8ce26527b24c6aae4a30d",
+      "checksum_valid": true
+    },
+    {
+      "kind": "klines",
+      "period": "2026-09-21",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-21.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\klines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-21.zip",
+      "status": 200,
+      "size": 63511,
+      "sha256": "6308c5107d830bb401046d5b97512051eef41313399d686b02445420aa73989a",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-02",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-02.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-02.zip",
+      "status": 200,
+      "size": 34060,
+      "sha256": "1c002ef993eef9e6223cc7671809987717469e32aa7472ecf7136070a4de2ba1",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-01",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-01.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-01.zip",
+      "status": 200,
+      "size": 34011,
+      "sha256": "f5f8f6ebdba47959a5848d2a711ef42b4798fe2c880181ae6efd1c6d520f4c57",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-03",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-03.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-03.zip",
+      "status": 200,
+      "size": 35052,
+      "sha256": "d7c3b35d23d2bdfd38c9488c521f00b2cc68aefd8ae612947431fb2fc0132320",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-04",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-04.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-04.zip",
+      "status": 200,
+      "size": 34465,
+      "sha256": "479240349cc798e2d473abfb0d25e890bc010e5afc004aa376698087c6313590",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-05",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-05.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-05.zip",
+      "status": 200,
+      "size": 31888,
+      "sha256": "aad38540a82c2c0d79388639d599302e920d192606be005d0a8027fa0a9a45ae",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-06",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-06.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-06.zip",
+      "status": 200,
+      "size": 32482,
+      "sha256": "828a4feaac147cb55d10d79529411d382b061552e2308e49b0591fd0a2f0c1a4",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-10",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-10.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-10.zip",
+      "status": 200,
+      "size": 34165,
+      "sha256": "c4866ac52a8fa70b45e625a6301fdce907a3cdaa3d7a3caca977330af1881999",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-09",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-09.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-09.zip",
+      "status": 200,
+      "size": 34634,
+      "sha256": "38aa68dd0b01f06af543b1b2e3eaf193cb7fe02e7197714f1112a22e223f8d5d",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-11",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-11.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-11.zip",
+      "status": 200,
+      "size": 34661,
+      "sha256": "4f5714ca75ed570fdd632de6830f573b6cb1e1248ad1840f8bfd709c300ae17c",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-08",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-08.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-08.zip",
+      "status": 200,
+      "size": 33916,
+      "sha256": "d06df65eaea4faf7a462b7942dfdc9f6d3528ab75037e846c35a31186f40e0a1",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-07",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-07.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-07.zip",
+      "status": 200,
+      "size": 33250,
+      "sha256": "232b37b6eb654336a7d9f2faa192bea412605e198e7b394bf95945f740768970",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-12",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-12.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-12.zip",
+      "status": 200,
+      "size": 31445,
+      "sha256": "209527a44e352020aa3b8412d2b8be28b11da12ca4841b2f31f8c9978e48ac95",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-14",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-14.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-14.zip",
+      "status": 200,
+      "size": 34739,
+      "sha256": "50dc2ae4e2c1cd6a966a1edfd2017a032d295328d6116b5a9a9e13e4dea928b0",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-15",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-15.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-15.zip",
+      "status": 200,
+      "size": 34491,
+      "sha256": "e28ee36ae9ddf226b0d2684fe293c8e17e0bf9aa4b5118087174f6991f02bca3",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-13",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-13.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-13.zip",
+      "status": 200,
+      "size": 32489,
+      "sha256": "daa89b796607b39c92f9b40f365038d48f57b4ab78dbf3ea1427c1cb3e1fb098",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-16",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-16.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-16.zip",
+      "status": 200,
+      "size": 33922,
+      "sha256": "d4a896dc012e1784dee6d1e1af8a9ab5197571a0610606f232fb91a818297b96",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-17",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-17.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-17.zip",
+      "status": 200,
+      "size": 33548,
+      "sha256": "822d182113e3df442bea97c89ae682db36c76a9894d3feb65fcdce8f108f8124",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-18",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-18.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-18.zip",
+      "status": 200,
+      "size": 34472,
+      "sha256": "cf25cd13c589c439ae4c2cb4ca8281be9f3d772f19b7ac6e53e4fdf7ee442051",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-19",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-19.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-19.zip",
+      "status": 200,
+      "size": 32917,
+      "sha256": "80eac507c7bc3d734692aa23eb826a41882c53d43b091fa0dee3cda0c6adcdca",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-22",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-22.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-22.zip",
+      "status": 404
+    },
+    {
+      "kind": "fundingRate",
+      "period": "2026-09",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-09.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\monthly\\fundingRate\\BTCUSDT\\BTCUSDT-fundingRate-2026-09.zip",
+      "status": 404
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-20",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-20.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-20.zip",
+      "status": 200,
+      "size": 33129,
+      "sha256": "99d43ac46674aef18c1d0eb97b0075eb9a9b396d0eb772cf03fab848faf314f1",
+      "checksum_valid": true
+    },
+    {
+      "kind": "markPriceKlines",
+      "period": "2026-09-21",
+      "url": "https://data.binance.vision/data/futures/um/daily/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-09-21.zip",
+      "path": "D:\\dev\\jev-mesh\\data\\raw\\binance\\daily\\markPriceKlines\\BTCUSDT\\1m\\BTCUSDT-1m-2026-09-21.zip",
+      "status": 200,
+      "size": 35865,
+      "sha256": "8175b33bb5e1df222305c08ccd4e151b2a3d1661f38334abf14b4e2b131ef31f",
+      "checksum_valid": true
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+{
+  "queried_at": "2026-09-22T19:21:47.914969+00:00",
+  "results": [
+    {
+      "name": "binance_march_klines",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-03.zip",
+      "status": 200,
+      "content_length": "1911731",
+      "content_type": "binary/octet-stream"
+    },
+    {
+      "name": "binance_august_klines",
+      "url": "https://data.binance.vision/data/futures/um/monthly/klines/BTCUSDT/1m/BTCUSDT-1m-2026-08.zip",
+      "status": 200,
+      "content_length": "1817920",
+      "content_type": "binary/octet-stream"
+    },
+    {
+      "name": "binance_september_klines",
+      "url": "https://data.binance.vision/data/futures/um/daily/klines/BTCUSDT/1m/BTCUSDT-1m-2026-09-22.zip",
+      "status": 404,
+      "content_length": null,
+      "content_type": "application/xml"
+    },
+    {
+      "name": "binance_mark",
+      "url": "https://data.binance.vision/data/futures/um/monthly/markPriceKlines/BTCUSDT/1m/BTCUSDT-1m-2026-03.zip",
+      "status": 200,
+      "content_length": "1085521",
+      "content_type": "binary/octet-stream"
+    },
+    {
+      "name": "binance_funding",
+      "url": "https://data.binance.vision/data/futures/um/monthly/fundingRate/BTCUSDT/BTCUSDT-fundingRate-2026-03.zip",
+      "status": 200,
+      "content_length": "1008",
+      "content_type": "binary/octet-stream"
+    },
+    {
+      "name": "binance_aggtrades",
+      "url": "https://data.binance.vision/data/futures/um/daily/aggTrades/BTCUSDT/BTCUSDT-aggTrades-2026-03-01.zip",
+      "status": 200,
+      "content_length": "29874460",
+      "content_type": "application/zip"
+    },
+    {
+      "name": "binance_exchange_info",
+      "url": "https://fapi.binance.com/fapi/v1/exchangeInfo",
+      "error": "HTTPSConnectionPool(host='fapi.binance.com', port=443): Max retries exceeded with url: /fapi/v1/exchangeInfo (Caused by ConnectTimeoutError(<HTTPSConnection(host='fapi.binance.com', port=443) at 0x22445e76490>, 'Connection to fapi.binance.com timed out. (connect timeout=25)'))"
+    },
+    {
+      "name": "cryptocompare_history",
+      "url": "https://min-api.cryptocompare.com/data/v2/news/?lang=EN&categories=BTC&lTs=1775001599",
+      "status": 401,
+      "content_length": "273",
+      "content_type": "application/json",
+      "sample": "{\"Data\":{},\"Err\":{\"type\":2,\"message\":\"API key required, please refer to the documentation at https://developers.coindesk.com/\",\"http_status_code\":401,\"frontend\":{\"type\":2,\"message\":\"API key required, please refer to the documentation at https://developers.coindesk.com/\"}}}"
+    },
+    {
+      "name": "bitcoinmagazine_wp",
+      "url": "https://bitcoinmagazine.com/wp-json/wp/v2/posts?after=2026-03-01T00:00:00&before=2026-09-23T00:00:00&per_page=2&_fields=id,date_gmt,modified_gmt,link,title,excerpt",
+      "status": 200,
+      "content_length": null,
+      "content_type": "application/json; charset=UTF-8",
+      "sample": "[{\"id\":55126,\"date_gmt\":\"2026-09-22T18:44:51\",\"modified_gmt\":\"2026-09-22T18:45:09\",\"link\":\"https:\\/\\/bitcoinmagazine.com\\/news\\/bitcoin-bull-run-is-back-data-shows\",\"title\":{\"rendered\":\"Bitcoin&#8217;s Bull Run Is Back \\u2014 and the Data Agrees\"},\"excerpt\":{\"rendered\":\"<p>The Bitcoin price&#8217;s move above its 365-day average marks the end of bear market, says CryptoQuant. <\\/p>\\n\",\"protected\":false}},{\"id\":55123,\"date_gmt\":\"2026-09-22T17:20:11\",\"modified_gmt\":\"2026-09-22T17:20:46\",\"link\":\"https:\\/\\/bitcoinmagazine.com\\/news\\/white-hats-move-bitcoins-from-coldcard\",\"title\":{\"rendered\":\"White Hats Move Over $4.5 in Bitcoins From Coldcard to Recovery Trust\"},\"excerpt\":{\"rendered\":\"<p>White hats have moved bitcoin from the hacked Coldcard signing devices to a trust for would-be victims to reclaim, Galaxy Digital&#8217;s Alex Thorn has said.&nbsp; Writing on X on Monday, Thorn said that the funds were taken by white hats to protect potential victims. They are now apparently sitting in an address controlled by Crypto [&hellip;]<\\/p>\\n\",\"protected\":false}}]"
+    },
+    {
+      "name": "bitcoincom_wp",
+      "url": "https://news.bitcoin.com/wp-json/wp/v2/posts?after=2026-03-01T00:00:00&before=2026-09-23T00:00:00&per_page=2&_fields=id,date_gmt,modified_gmt,link,title,excerpt",
+      "error": "HTTPSConnectionPool(host='news.bitcoin.com', port=443): Max retries exceeded with url: /wp-json/wp/v2/posts?after=2026-03-01T00:00:00&before=2026-09-23T00:00:00&per_page=2&_fields=id,date_gmt,modified_gmt,link,title,excerpt (Caused by ConnectTimeoutError(<HTTPSConnection(host='news.bitcoin.com', port=443) at 0x22445e77ed0>, 'Connection to news.bitcoin.com timed out. (connect timeout=25)'))"
+    },
+    {
+      "name": "gdelt_march",
+      "url": "https://api.gdeltproject.org/api/v2/doc/doc?query=bitcoin&mode=artlist&format=json&maxrecords=2&startdatetime=20260301000000&enddatetime=20260302000000",
+      "status": 429,
+      "content_length": "444",
+      "content_type": null,
+      "sample": "Please limit requests to one every 5 seconds or contact kalev.leetaru5@gmail.com for larger queries. All high-traffic users should switch to our ngrams dataset: https://blog.gdeltproject.org/using-the-new-web-ngrams-dataset-to-find-relevant-coverage/. For trend analysis, please see our daily newsletter briefings: https://blog.gdeltproject.org/announcing-our-new-daily-todays-trends-on-capitol-hill-todays-media-trends-newsletter-briefings/.\n\n"
+    }
+  ]
+}

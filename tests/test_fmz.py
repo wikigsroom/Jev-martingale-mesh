@@ -1,0 +1,187 @@
+from dataclasses import replace
+import numpy as np
+import pytest
+from jevmesh.fmz_config import FMZConfig
+from jevmesh.fmz_engine import *
+
+
+def initialized():
+    s = np.zeros(FMZ_STATE_SIZE)
+    s[W] = s[PEAK] = s[MINEQ] = 100.
+    return s
+
+
+def fixture(prices, cfg, news=None):
+    times = 1788220800000+np.arange(len(prices), dtype=np.int64)*1000
+    features = np.full((len(prices), 11), 60000.)
+    return {'times': times, 'bars': np.repeat(np.array(prices, dtype=float)[:, None], 8, axis=1),
+            'funding': np.zeros(len(prices)), 'news': np.zeros((len(prices), 2), dtype=np.float32) if news is None else news,
+            'minute_index': np.arange(len(prices), dtype=np.int32), 'features': features, 'resolution': '1m'}
+
+
+def test_linear_grid_stays_anchored_after_add():
+    c = replace(FMZConfig(), controller=0, jev_action=0, max_loss_notional_multiple=9)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    refresh_quotes(s, 1, 60000, ts+1000, p, q, True)
+    assert s[OP_L] == 57000
+    assert s[OQ_L] == pytest.approx(.003)
+    fmz_segment(s, 60000, 56500, 60000, 56500, ts+1000, p, q, np.zeros(2, dtype=np.bool_))
+    refresh_quotes(s, 1, 56500, ts+2000, p, q, True)
+    assert s[NL] == 1 and s[OP_L] == 54000
+    assert s[OQ_L] == pytest.approx(.004)
+
+
+def test_long_and_short_spacing_are_independent():
+    p, q = fmz_vectors(FMZConfig())
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .001)
+    open_side(s, -1, 65000, 65000, ts+1000, p, q, .001)
+    assert s[GS_L] == 3000 and s[GS_S] == 3250
+
+
+def test_quote_rejection_does_not_advance_martingale_level():
+    c = replace(FMZConfig(), controller=0, max_loss_notional_multiple=20, gross_utilization=.2)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    refresh_quotes(s, 1, 60000, ts+1000, p, q, True)
+    raw = s[RAW_L]
+    fmz_segment(s, 60000, 56500, 60000, 56500, ts+1000, p, q, np.zeros(2, dtype=np.bool_))
+    assert s[REJECT] >= 1 and s[NL] == 0 and s[RAW_L] == raw
+
+
+def test_post_tp_controller_closes_loser_and_reopens_only_winner():
+    c = replace(FMZConfig(), controller=1, profit_target=.01, trend_confirm_minutes=0, jev_action=0)
+    d = fixture([60000, 60000, 60700, 60700, 60700], c)
+    d['features'][:, 2] = 61000  # EMA 60 above slow EMA 720.
+    d['features'][:, 9] = 61000
+    r, curve = backtest_fmz(d, c, record=True)
+    assert r['post_tp_switches'] == 1 and r['opposite_closes'] == 1
+    assert curve.loc[3, 'long_qty'] > 0 and curve.loc[3, 'short_qty'] == 0
+    assert curve.loc[3, 'regime'] == 1
+
+
+def test_jev_flatten_stops_both_and_blocks_immediate_reentry():
+    c = replace(FMZConfig(), controller=0, jev_breakout_threshold=.3)
+    news = np.zeros((5, 2), dtype=np.float32)
+    news[2] = [.8, .1]
+    d = fixture([60000]*5, c, news)
+    r, curve = backtest_fmz(d, c, record=True)
+    assert r['event_flatten_count'] == 1
+    assert curve.loc[2:, ['long_qty', 'short_qty']].to_numpy().sum() == 0
+
+
+def test_jev_directional_control_closes_only_opposite_side():
+    c = replace(FMZConfig(), controller=0, jev_action=2, jev_breakout_threshold=.3, jev_direction_threshold=.05)
+    news = np.zeros((5, 2), dtype=np.float32)
+    news[2] = [.8, .2]
+    d = fixture([60000]*5, c, news)
+    r, curve = backtest_fmz(d, c, record=True)
+    assert r['jev_forced_leg_closes'] == 1
+    assert curve.loc[2, 'long_qty'] > 0 and curve.loc[2, 'short_qty'] == 0
+
+
+def test_equity_fee_conservation_on_unchanged_hedge():
+    c = replace(FMZConfig(), controller=0, jev_action=0)
+    d = fixture([60000]*5, c)
+    r = backtest_fmz(d, c)
+    assert r['final_equity'] == pytest.approx(100-4*.001*60000*(c.taker_fee+c.slippage_bps/10000))
+
+
+def test_gap_liquidation_stops_everything_without_topup():
+    p, q = fmz_vectors(FMZConfig())
+    s = initialized()
+    s[QL], s[AL], s[CW] = .01, 60000, 100
+    s[OQ_L], s[TP_L] = .002, 70000
+    fmz_risk(s, 40000, 40000, 1788220800000, p, q)
+    assert s[LIQ] == 1 and s[HALT] == 1 and s[W] == 0
+    assert s[OQ_L] == 0 and s[TP_L] == 0
+
+
+def test_trend_uses_completed_minute_features_not_current_future_close():
+    c = replace(FMZConfig(), controller=4, trend_confirm_minutes=0, jev_action=0)
+    d = fixture([60000]*4, c)
+    # A future feature row is extreme but not referenced until its timestamp.
+    d['features'][3, 2] = 70000
+    d['features'][3, 9] = 70000
+    r, curve = backtest_fmz(d, c, record=True)
+    assert curve.loc[:2, 'fills'].sum() == 0
+
+
+def test_leverage_cap_is_retained():
+    with pytest.raises(AssertionError):
+        replace(FMZConfig(), leverage=20).validate()
+
+
+def test_new_marketable_limit_is_a_taker_and_respects_its_price_limit():
+    c = replace(FMZConfig(), controller=0, jev_action=0, max_loss_notional_multiple=9)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    old_fee = s[FEES]
+    refresh_quotes(s, 1, 56000, ts+1000, p, q, True)
+    fmz_path(s, np.full(8, 56000.), ts+1000, p, q, True)
+    assert s[NL] == 1
+    assert s[FEES]-old_fee == pytest.approx(.003*56000*1.0002*c.taker_fee)
+
+
+def test_existing_resting_limit_uses_maker_fee_on_a_gap():
+    c = replace(FMZConfig(), controller=0, jev_action=0, max_loss_notional_multiple=9)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    old_fee = s[FEES]
+    refresh_quotes(s, 1, 60000, ts+1000, p, q, True)
+    fmz_path(s, np.full(8, 56000.), ts+2000, p, q, True)
+    assert s[FEES]-old_fee == pytest.approx(.003*57000*c.maker_fee)
+
+
+def test_both_sides_take_profit_respects_reentry_delay():
+    c = replace(FMZConfig(), controller=0, jev_action=0, profit_target=.01, reentry_delay_seconds=30)
+    d = fixture([60000]*3, c)
+    d['bars'][1] = [60000, 61000, 59000, 60000, 60000, 61000, 59000, 60000]
+    r, curve = backtest_fmz(d, c, record=True)
+    assert r['take_profit_fills'] == 2 and r['fills'] == 4
+    assert curve.loc[2, 'long_qty'] == 0 and curve.loc[2, 'short_qty'] == 0
+
+
+def test_jev_add_veto_keeps_existing_take_profit_live():
+    c = replace(FMZConfig(), controller=0, jev_action=3, jev_breakout_threshold=.3, max_loss_notional_multiple=9)
+    news = np.zeros((5, 2), dtype=np.float32)
+    news[2] = [.9, .1]
+    d = fixture([60000, 60000, 61900, 63050, 63050], c, news)
+    r, curve = backtest_fmz(d, c, record=True)
+    assert r['take_profit_fills'] == 1
+    assert curve.loc[3, 'long_qty'] == 0 and curve.loc[3, 'short_qty'] > 0
+
+
+def test_both_pending_adds_reserve_margin_and_rejection_keeps_tp():
+    c = replace(FMZConfig(), gross_utilization=.6, controller=0, jev_action=0)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    open_side(s, -1, 60000, 60000, ts, p, q, .002)
+    refresh_quotes(s, 1, 60000, ts+1000, p, q, True)
+    refresh_quotes(s, -1, 60000, ts+1000, p, q, True)
+    assert s[OQ_L] == pytest.approx(.003)
+    assert s[OQ_S] == 0 and s[TP_S] > 0 and s[REJECT] == 1
+    assert (s[QL]+s[QS])*60000+s[OQ_L]*s[OP_L] < equity(s, 60000)*6
+
+
+def test_reopening_side_cannot_spend_other_sides_reserved_margin():
+    c = replace(FMZConfig(), gross_utilization=.6, controller=0, jev_action=0, max_loss_notional_multiple=9)
+    p, q = fmz_vectors(c)
+    s = initialized()
+    ts = 1788220800000
+    assert open_side(s, 1, 60000, 60000, ts, p, q, .002)
+    refresh_quotes(s, 1, 60000, ts+1000, p, q, True)
+    assert not open_side(s, -1, 60000, 60000, ts+1000, p, q, .006)
+    assert s[QS] == 0 and s[OQ_L] > 0

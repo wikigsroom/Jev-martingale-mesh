@@ -1,0 +1,18 @@
+{
+  "created_at_utc": "2026-09-23T01:54:50.129902+00:00",
+  "search": "reports/fmz_v2/search_margin_verified",
+  "trial_ids": [
+    290,
+    2620,
+    310,
+    1623,
+    1204,
+    1244,
+    1141,
+    1277,
+    930,
+    2192
+  ],
+  "selection": "Positive, no halt/liquidation, actual martingale adds in both fit and validation. Primary must use the post-TP controller and an active Jev policy. Maximize 0.4*fit_score + 0.6*validation_score at 1s, using March-August only.",
+  "september_status": "Previously observed in the earlier research; not a pristine holdout."
+}

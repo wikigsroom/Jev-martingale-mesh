@@ -1,0 +1,181 @@
+{
+  "method": "Frozen NanoJev backbone plus supervised retraining of its original choice head",
+  "seed": 20260923,
+  "chosen": {
+    "learning_rate": 0.0003,
+    "weight_decay": 0.1,
+    "epoch": 9
+  },
+  "temperature": 1.1095694720678453,
+  "trials": [
+    {
+      "learning_rate": 0.0001,
+      "weight_decay": 0.1,
+      "epochs_run": 34,
+      "best_selection_log_loss": 0.7735474705696106
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 0.1,
+      "epochs_run": 27,
+      "best_selection_log_loss": 0.7630826234817505
+    },
+    {
+      "learning_rate": 0.0001,
+      "weight_decay": 1.0,
+      "epochs_run": 34,
+      "best_selection_log_loss": 0.7731250524520874
+    },
+    {
+      "learning_rate": 0.0003,
+      "weight_decay": 1.0,
+      "epochs_run": 27,
+      "best_selection_log_loss": 0.7652707695960999
+    }
+  ],
+  "evaluation": {
+    "fit_Mar_May": {
+      "adapted": {
+        "n": 460,
+        "accuracy": 0.7565217391304347,
+        "log_loss": 0.7540067434310913,
+        "multiclass_brier": 0.417268922076128,
+        "label_counts": [
+          51,
+          348,
+          61
+        ]
+      },
+      "original": {
+        "n": 460,
+        "accuracy": 0.1108695652173913,
+        "log_loss": 1.1701719760894775,
+        "multiclass_brier": 0.7251518017503494,
+        "label_counts": [
+          51,
+          348,
+          61
+        ]
+      },
+      "class_prior": {
+        "n": 460,
+        "accuracy": 0.7565217391304347,
+        "log_loss": 0.7228506722113368,
+        "multiclass_brier": 0.3977977315689981,
+        "label_counts": [
+          51,
+          348,
+          61
+        ]
+      }
+    },
+    "head_selection_Jun_1_15": {
+      "adapted": {
+        "n": 70,
+        "accuracy": 0.7285714285714285,
+        "log_loss": 0.7672731876373291,
+        "multiclass_brier": 0.42879463846179117,
+        "label_counts": [
+          7,
+          51,
+          12
+        ]
+      },
+      "original": {
+        "n": 70,
+        "accuracy": 0.1,
+        "log_loss": 1.1860865354537964,
+        "multiclass_brier": 0.7355675389805438,
+        "label_counts": [
+          7,
+          51,
+          12
+        ]
+      },
+      "class_prior": {
+        "n": 70,
+        "accuracy": 0.7285714285714285,
+        "log_loss": 0.7695751713738804,
+        "multiclass_brier": 0.4322022684310018,
+        "label_counts": [
+          7,
+          51,
+          12
+        ]
+      }
+    },
+    "calibration_Jun_16_30": {
+      "adapted": {
+        "n": 73,
+        "accuracy": 0.684931506849315,
+        "log_loss": 0.8373389840126038,
+        "multiclass_brier": 0.47778183246531847,
+        "label_counts": [
+          15,
+          50,
+          8
+        ]
+      },
+      "original": {
+        "n": 73,
+        "accuracy": 0.2054794520547945,
+        "log_loss": 1.1381890773773193,
+        "multiclass_brier": 0.7027587907573983,
+        "label_counts": [
+          15,
+          50,
+          8
+        ]
+      },
+      "class_prior": {
+        "n": 73,
+        "accuracy": 0.684931506849315,
+        "log_loss": 0.8644525251958106,
+        "multiclass_brier": 0.4912433643214128,
+        "label_counts": [
+          15,
+          50,
+          8
+        ]
+      }
+    },
+    "strategy_validation_Jul_Aug": {
+      "adapted": {
+        "n": 278,
+        "accuracy": 0.7913669064748201,
+        "log_loss": 0.6948733925819397,
+        "multiclass_brier": 0.37632683982691156,
+        "label_counts": [
+          23,
+          220,
+          35
+        ]
+      },
+      "original": {
+        "n": 278,
+        "accuracy": 0.08273381294964029,
+        "log_loss": 1.1839033365249634,
+        "multiclass_brier": 0.7356686434762953,
+        "label_counts": [
+          23,
+          220,
+          35
+        ]
+      },
+      "class_prior": {
+        "n": 278,
+        "accuracy": 0.7913669064748201,
+        "log_loss": 0.6571361285151199,
+        "multiclass_brier": 0.35309372917544984,
+        "label_counts": [
+          23,
+          220,
+          35
+        ]
+      }
+    }
+  },
+  "head_sha256": "2a0b8ced428b0997872e70ea8bd9ad2658b881426f9418ff3022e754c8d20d04",
+  "unseen_strategy_holdout": "2026-09-01 to last complete market day",
+  "warning": "Small single-publisher sample, retrospective timestamps, and possible backbone pretraining contamination. No causal-news or profitability claim."
+}

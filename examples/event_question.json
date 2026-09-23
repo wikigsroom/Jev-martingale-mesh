@@ -1,0 +1,9 @@
+{
+  "state": "Asset: BTCUSDT perpetual. Only information available now is supplied.\nNews publisher: bitcoinmagazine. Headline: Strategy ($MSTR) Buys $204 Million in Bitcoin, Holdings Climb to 720,737 BTC\nSummary: Strategy purchased over $200 million in bitcoin last week, lifting its total holdings to 720,737.\nCompleted-market returns: past 5 minutes 0.129%; past 30 minutes 1.249%. Past one-minute return standard deviation 0.1393%. Directional threshold: 0.098% over the next 30 seconds. The future price is unknown.",
+  "instructions": "Classify the BTCUSDT price return over the next 30 seconds relative to the stated threshold. Choose the most likely outcome based only on the supplied news and past market data.",
+  "candidates": {
+    "up": "The future 30-second return is greater than the positive threshold.",
+    "range": "The future 30-second return lies between the negative and positive thresholds, inclusive.",
+    "down": "The future 30-second return is below the negative threshold."
+  }
+}

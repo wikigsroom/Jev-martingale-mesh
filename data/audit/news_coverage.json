@@ -1,0 +1,16 @@
+{
+  "records": 983,
+  "pages": 10,
+  "source": "https://bitcoinmagazine.com/wp-json/wp/v2/posts",
+  "monthly_published_counts": {
+    "2026-03": 168,
+    "2026-04": 175,
+    "2026-05": 117,
+    "2026-06": 144,
+    "2026-07": 151,
+    "2026-08": 128,
+    "2026-09": 100
+  },
+  "timestamp_limitation": "Publisher timestamps, not observed live arrival. Last-modified gating is conservative but does not prove historical availability or unchanged text.",
+  "sha256": "3c1c572f52130d54d72ebcc2850c391be9514322ba0d2c698262377041948dc2"
+}

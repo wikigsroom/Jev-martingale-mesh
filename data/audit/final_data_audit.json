@@ -1,0 +1,11 @@
+{
+  "days": 205,
+  "seconds": 17712000,
+  "aggregate_trades": 293759548,
+  "compressed_trade_bytes": 3579329461,
+  "no_trade_seconds_forward_carried": 891732,
+  "minute_close_mismatches_over_one_tick": 0,
+  "event_questions": 976,
+  "point_in_time_input_violations": 0,
+  "all_processed_second_files_sha256_verified": true
+}
