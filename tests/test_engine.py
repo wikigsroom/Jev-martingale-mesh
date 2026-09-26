@@ -68,6 +68,18 @@ def test_adverse_gap_liquidates_before_ordinary_stop():
     assert s[QL] == 0 and s[QS] == 0
 
 
+def test_zero_equity_drawdown_limit_disables_account_halt():
+    s = state()
+    s[QL], s[AL] = .001, 60000
+    cfg = replace(StrategyConfig(), equity_halt_drawdown=0)
+    p = config_vector(cfg)
+    assert not check_risk(s, 50000, 50000, 1788220800000, p)
+    assert s[QL] == .001 and s[HALT] == 0
+    assert not segment(s, 60000, 50000, 60000, 50000, 1788220800000, p,
+                       np.ones(2, dtype=np.bool_), np.ones(2, dtype=np.bool_))
+    assert s[QL] == .001 and s[HALT] == 0
+
+
 def test_continuous_mark_barrier_closes_before_liquidation():
     s = state()
     s[QL], s[AL], s[LL], s[OL], s[CW], s[NL] = .005, 60000, 60000, .005, 100, 8
@@ -91,11 +103,12 @@ def test_insufficient_margin_opens_neither_initial_leg():
     assert r['fills'] == 0 and r['final_equity'] == 100
 
 
-def test_user_cap_cannot_be_relaxed():
+def test_user_cap_and_initial_equity_are_validated():
     with pytest.raises(ValueError):
         replace(StrategyConfig(), leverage=11).validate()
     with pytest.raises(ValueError):
-        replace(StrategyConfig(), initial_equity=1000).validate()
+        replace(StrategyConfig(), initial_equity=0).validate()
+    assert replace(StrategyConfig(), initial_equity=1000).validate().initial_equity == 1000
 
 
 def test_resting_take_profit_fills_when_next_trade_gaps_through_limit():

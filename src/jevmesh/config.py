@@ -36,16 +36,16 @@ class StrategyConfig:
     tick_size: float = 0.10
 
     def validate(self):
-        if self.initial_equity != 100:
-            raise ValueError("This experiment fixes initial capital at 100 USDT")
+        if self.initial_equity <= 0:
+            raise ValueError("Initial equity must be positive")
         if not 1 <= self.leverage <= 10:
             raise ValueError("Leverage must be in [1,10]")
         if not 0 < self.gross_utilization <= 1:
             raise ValueError("Invalid gross margin utilization")
         if not 0 <= self.max_adds <= 8 or not 1 <= self.multiplier <= 2:
             raise ValueError("Unsupported martingale inventory limits")
-        if not 0 < self.basket_stop < 1 or not 0 < self.equity_halt_drawdown < 1:
-            raise ValueError("Loss limits must be fractions in (0,1)")
+        if not 0 < self.basket_stop < 1 or not 0 <= self.equity_halt_drawdown < 1:
+            raise ValueError("Basket stop must be in (0,1); equity drawdown halt may be 0 to disable")
         if self.grid_step <= 0 or self.take_profit <= 0:
             raise ValueError("Grid and take-profit distances must be positive")
         if min(self.maker_fee, self.taker_fee, self.slippage_bps, self.maintenance_rate, self.liquidation_fee) < 0:

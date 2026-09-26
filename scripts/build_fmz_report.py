@@ -66,7 +66,8 @@ def main():
     saved = freeze['artifacts']['selected']
     before = e['full_1s']['no_jev']
     delta = selected['net_profit']-before['net_profit']
-    active_name = {1: '全部平仓并暂停', 2: '方向过滤与对侧退出', 3: '暂停加仓和重开，保留止盈及硬止损'}[cfg['jev_action']]
+    active_name = {0: '关闭JEV', 1: '全部平仓并暂停', 2: '方向过滤与对侧退出',
+                   3: '暂停加仓和重开，保留止盈及硬止损', 4: '方向性对侧平仓并双边暂停'}[cfg['jev_action']]
     full_names = {'selected':'选中方案', 'event_flatten':'JEV双边全平备选', 'no_jev':'同参数关闭JEV',
         'no_trend':'同参数关闭趋势控制', 'no_opposite_close':'同参数保留反向仓位',
         'original_adapted':'原结构的BTC安全适配', 'event_flatten_no_jev':'双边全平备选关闭JEV'}
@@ -84,7 +85,8 @@ def main():
         ('leverage','杠杆上限'), ('gross_utilization','权益×杠杆的仓位/挂单预算系数'),
         ('base_spacing','每侧相对首次开仓价的固定间距'), ('ratio','未取整数量增长系数'),
         ('max_adds','每侧最多追加次数'), ('base_amount_rate','动态基础金额/权益'),
-        ('base_amount_min','基础金额下限U（首单再乘ratio）'), ('profit_target','均价±刷新现价×此值止盈'),
+        ('base_amount_min','基础金额下限U（首单再乘ratio）'), ('min_trade_notional','每笔成交名义金额下限U（严格高于交易所最低名义额）'),
+        ('profit_target','均价±刷新现价×此值止盈'),
         ('warning_index','对侧网格序号的重开限制'), ('max_loss_notional_multiple','单侧名义额上限/初始100U'),
         ('ema_fast_minutes','快速EMA分钟'), ('ema_slow_minutes','慢速EMA分钟'),
         ('trend_enter','EMA相对差进入阈值'), ('trend_exit_fraction','保持趋势阈值/进入阈值'),

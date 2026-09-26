@@ -1,0 +1,148 @@
+{
+  "period": {
+    "start": "2026-06-22",
+    "end_exclusive": "2026-09-22"
+  },
+  "resolution": "1s",
+  "dataset_signature": "04edbf6b59bfa0e8a75049f31a8086a66e1402a97db2cbe2e8d65ba270ee0dd6",
+  "results": [
+    {
+      "label": "action3_t0.20_h300",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.2,
+        "jev_hold_seconds": 300.0
+      },
+      "final_equity": 975.2258742878296,
+      "net_profit": -24.774125712170417,
+      "return_pct": -2.4774125712170414,
+      "max_drawdown_pct": 12.584134028142557,
+      "min_equity": 916.5471919992146,
+      "fees": 50.14196203676999,
+      "funding_net": -0.27812673539769145,
+      "fills": 76,
+      "martingale_adds": 26,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 6792,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 74698,
+      "turnover": 116736.52899353995
+    },
+    {
+      "label": "action3_t0.22_h180",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.22,
+        "jev_hold_seconds": 180.0
+      },
+      "final_equity": 984.9233796978298,
+      "net_profit": -15.076620302170227,
+      "return_pct": -1.5076620302170274,
+      "max_drawdown_pct": 13.458481990431249,
+      "min_equity": 926.2446974092148,
+      "fees": 51.41854082923,
+      "funding_net": -0.4871703329386843,
+      "fills": 78,
+      "martingale_adds": 28,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 5200,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 41074,
+      "turnover": 122327.69681846001
+    },
+    {
+      "label": "action3_t0.25_h180",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.25,
+        "jev_hold_seconds": 180.0
+      },
+      "final_equity": 989.9385399578097,
+      "net_profit": -10.061460042190333,
+      "return_pct": -1.0061460042190329,
+      "max_drawdown_pct": 13.395712384242653,
+      "min_equity": 931.2598576691947,
+      "fees": 52.29143708925,
+      "funding_net": -0.4871703329386843,
+      "fills": 79,
+      "martingale_adds": 29,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 3092,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 27506,
+      "turnover": 124818.7264785
+    },
+    {
+      "label": "action3_t0.28_h180",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.28,
+        "jev_hold_seconds": 180.0
+      },
+      "final_equity": 984.0180161731307,
+      "net_profit": -15.981983826869282,
+      "return_pct": -1.5981983826869328,
+      "max_drawdown_pct": 12.900880012924109,
+      "min_equity": 925.3393338845158,
+      "fees": 51.782220226149995,
+      "funding_net": -0.468356940717036,
+      "fills": 79,
+      "martingale_adds": 29,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 1601,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 16657,
+      "turnover": 124498.58877229996
+    },
+    {
+      "label": "action3_t0.30_h180",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.3,
+        "jev_hold_seconds": 180.0
+      },
+      "final_equity": 984.0180161731307,
+      "net_profit": -15.981983826869282,
+      "return_pct": -1.5981983826869328,
+      "max_drawdown_pct": 12.900880012924109,
+      "min_equity": 925.3393338845158,
+      "fees": 51.782220226149995,
+      "funding_net": -0.468356940717036,
+      "fills": 79,
+      "martingale_adds": 29,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 924,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 9010,
+      "turnover": 124498.58877229996
+    },
+    {
+      "label": "action3_t0.35_h300",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.35,
+        "jev_hold_seconds": 300.0
+      },
+      "final_equity": 982.1797782270504,
+      "net_profit": -17.820221772949594,
+      "return_pct": -1.7820221772949618,
+      "max_drawdown_pct": 13.058517739882058,
+      "min_equity": 923.5010959384355,
+      "fees": 52.63770181222999,
+      "funding_net": -0.468356940717036,
+      "fills": 80,
+      "martingale_adds": 30,
+      "risk_stops": 24,
+      "liquidations": 0,
+      "jev_signals": 186,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 1783,
+      "turnover": 126943.69130445996
+    }
+  ]
+}

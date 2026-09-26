@@ -3,14 +3,17 @@ from dataclasses import dataclass, asdict
 from pathlib import Path
 import json
 from .config import StrategyConfig
+from .fmz_data import EMA_WINDOWS
 
 
 @dataclass(frozen=True)
 class FMZConfig:
     # Classical FMZ strategy parameters, in the source's units.
+    initial_equity: float = 100.
     base_spacing: float = .05
     base_amount_rate: float = .03
     base_amount_min: float = 20.
+    min_trade_notional: float = 130.
     ratio: float = 1.25
     profit_target: float = .05
     warning_index: int = 3
@@ -23,7 +26,7 @@ class FMZConfig:
     stop_cooldown_minutes: float = 60.
     reentry_delay_seconds: float = 1.
     poll_seconds: float = 1.
-    # 0=classical, 1=post-TP switch, 2=continuous hybrid, 3=range only, 4=trend only.
+    # 0=classical, 1=post-TP switch, 2=continuous hybrid, 3=range only, 4=trend-only single-side entry.
     controller: int = 2
     ema_fast_minutes: int = 60
     ema_slow_minutes: int = 720
@@ -34,12 +37,21 @@ class FMZConfig:
     allow_countertrend_add: bool = False
     directional_stop: float = .025
     directional_trail: float = .035
-    # 0=off, 1=flatten/pause, 2=directional veto/close, 3=stop additions/reentry.
+    # 0=off, 1=flatten/pause, 2=directional veto/close, 3=stop additions/reentry,
+    # 4=directional close with full pause.
     jev_action: int = 1
     jev_breakout_threshold: float = .4
     jev_direction_threshold: float = .1
     jev_hold_seconds: float = 60.
     news_delay_seconds: float = 5.
+    # Protective one-sided regime guard, separate from the slower controller.
+    risk_guard: int = 0
+    risk_fast_minutes: int = 15
+    risk_slow_minutes: int = 60
+    risk_enter: float = .002
+    risk_exit_fraction: float = .5
+    risk_confirm_minutes: float = 5.
+    risk_close_opposite: bool = True
     # Matching and cost assumptions remain explicit and never optimized away.
     maker_fee: float = .0002
     taker_fee: float = .0005
@@ -49,20 +61,30 @@ class FMZConfig:
     intrabar_mode: int = 0
 
     def validate(self):
+        assert self.initial_equity > 0
         assert 1 <= self.leverage <= 10
         assert 0 < self.gross_utilization <= 1
         assert .001 <= self.base_spacing <= .2 and 0 < self.profit_target <= .2
         assert 1 <= self.ratio <= 2 and 0 <= self.max_adds <= 12
-        assert 0 < self.basket_stop < 1 and 0 < self.account_drawdown_stop < 1
-        assert self.controller in range(5) and self.jev_action in range(4)
+        exchange_minima = self.base_config()
+        assert self.min_trade_notional > max(exchange_minima.min_notional_pre_change,
+                                             exchange_minima.min_notional_post_change)
+        assert 0 < self.basket_stop < 1 and 0 <= self.account_drawdown_stop < 1
+        assert self.controller in range(5) and self.jev_action in range(5)
         assert self.ema_fast_minutes < self.ema_slow_minutes
         assert self.news_delay_seconds >= 5  # Stored model input was constructed at +5s.
         assert self.reentry_delay_seconds >= 1
         assert self.poll_seconds >= 1
+        assert self.risk_guard in (0, 1)
+        assert self.risk_fast_minutes in EMA_WINDOWS and self.risk_slow_minutes in EMA_WINDOWS
+        assert self.risk_fast_minutes < self.risk_slow_minutes
+        assert self.risk_enter > 0 and 0 < self.risk_exit_fraction <= 1
+        assert self.risk_confirm_minutes >= 0
         return self
 
     def base_config(self):
-        return StrategyConfig(leverage=self.leverage, gross_utilization=self.gross_utilization,
+        return StrategyConfig(initial_equity=self.initial_equity, leverage=self.leverage,
+            gross_utilization=self.gross_utilization,
             basket_stop=self.basket_stop, equity_halt_drawdown=self.account_drawdown_stop,
             cooldown_minutes=self.stop_cooldown_minutes, maker_fee=self.maker_fee,
             taker_fee=self.taker_fee, slippage_bps=self.slippage_bps,

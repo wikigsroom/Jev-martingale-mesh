@@ -17,9 +17,19 @@ ANCL, ANCS, GS_L, GS_S, TP_L, TP_S, OQ_L, OQ_S, OP_L, OP_S, READY_L, READY_S, WI
 JEV_LEG_CLOSES = 64
 ADD_TIME_L, ADD_TIME_S, TP_TIME_L, TP_TIME_S = range(65, 69)
 QUOTE_READY_L, QUOTE_READY_S = 69, 70
-FMZ_STATE_SIZE = 71
+RISK_REGIME, RISK_PENDING, RISK_PENDING_AT, RISK_SWITCHES, RISK_CLOSES, RISK_VETOES = range(71, 77)
+FMZ_STATE_SIZE = 77
 SPACING, RATE, BASEMIN, RATIO, PROFIT, WARNING, CAP, MAX_ADDS, REENTRY, CONTROL, FAST, SLOW, ENTER, EXIT, CONFIRM, CLOSE_OPPOSITE, COUNTERADD, DIR_STOP, DIR_TRAIL, JEV_ACTION, JEV_THRESHOLD, JEV_DIRECTION, JEV_HOLD = range(23)
 POLL = 23
+RISK_GUARD, RISK_FAST, RISK_SLOW, RISK_ENTER, RISK_EXIT, RISK_CONFIRM, RISK_CLOSE_OPPOSITE = range(24, 31)
+MIN_TRADE = 31
+
+
+@njit(cache=True)
+def fmz_order_qty(target, price, ts, p, q):
+    exchange_minimum = p[25] if ts < p[27] else p[26]
+    raw = max(target/price, exchange_minimum/price, q[MIN_TRADE]/price, p[24])
+    return np.ceil((raw-1e-12)/p[23])*p[23]
 
 
 @njit(cache=True)
@@ -69,7 +79,10 @@ def fmz_risk(s, price, mark, ts, p, q):
             s[CAP_STOPS] += 1
             s[RSTOP] += 1
             continue
-        if s[REGIME] == side:
+        active_regime = s[REGIME]
+        if q[RISK_GUARD] > 0 and s[RISK_REGIME] != 0:
+            active_regime = s[RISK_REGIME]
+        if active_regime == side:
             if side == 1:
                 s[bi] = max(s[bi], mark)
             elif s[bi] == 0:
@@ -142,7 +155,7 @@ def refresh_quotes(s, side, price, ts, p, q, may_add, mark=0.):
             level = s[anchor]-side*index*s[spacing]
             level = (np.floor(level/p[28]) if side == 1 else np.ceil(level/p[28]))*p[28]
             if level > 0:
-                qty = order_qty(s[raw]*q[RATIO]*level, level, ts, p)
+                qty = fmz_order_qty(s[raw]*q[RATIO]*level, level, ts, p, q)
                 other_reserved = s[OQ_S]*s[OP_S] if side == 1 else s[OQ_L]*s[OP_L]
                 reference = mark if mark > 0 else price
                 gross = (s[QL]+s[QS])*reference
@@ -176,8 +189,10 @@ def fmz_segment(s, start, end, ms, me, ts, p, q, filled):
                 a, b = eq0-gross0*p[21], eq1-gross1*p[21]
             elif kind == 1 and s[CW] > 0:
                 a, b = eq0-s[CW]*(1-p[8]), eq1-s[CW]*(1-p[8])
-            else:
+            elif kind == 2 and p[12] > 0:
                 a, b = eq0-s[PEAK]*(1-p[12]), eq1-s[PEAK]*(1-p[12])
+            else:
+                continue
             if a > 0 and b <= 0:
                 f = a/(a-b)
                 if f < fraction:
@@ -187,7 +202,10 @@ def fmz_segment(s, start, end, ms, me, ts, p, q, filled):
             qi, ai, best, oq, op, tp = (QL, AL, BEST_L, OQ_L, OP_L, TP_L) if side == 1 else (QS, AS, BEST_S, OQ_S, OP_S, TP_S)
             if s[qi] <= 0:
                 continue
-            if s[REGIME] == side and abs(me-mark) > 1e-12:
+            active_regime = s[REGIME]
+            if q[RISK_GUARD] > 0 and s[RISK_REGIME] != 0:
+                active_regime = s[RISK_REGIME]
+            if active_regime == side and abs(me-mark) > 1e-12:
                 stop = s[ai]*(1-side*q[DIR_STOP])
                 trail = s[best]*(1-side*q[DIR_TRAIL])
                 for barrier in (stop, trail):
@@ -331,6 +349,47 @@ def update_controller(s, feature, price, mark, ts, p, q):
 
 
 @njit(cache=True)
+def update_risk_guard(s, feature, price, mark, ts, p, q):
+    if q[RISK_GUARD] <= 0:
+        return
+    fast = feature[int(q[RISK_FAST])]
+    slow = feature[int(q[RISK_SLOW])]
+    last = feature[9]
+    if not np.isfinite(fast) or not np.isfinite(slow) or not np.isfinite(last) or slow <= 0:
+        return
+    spread = fast/slow-1.
+    current = int(s[RISK_REGIME])
+    if current == 1:
+        raw = 1 if spread > q[RISK_ENTER]*q[RISK_EXIT] and last > slow else 0
+    elif current == -1:
+        raw = -1 if spread < -q[RISK_ENTER]*q[RISK_EXIT] and last < slow else 0
+    elif spread > q[RISK_ENTER] and last > slow:
+        raw = 1
+    elif spread < -q[RISK_ENTER] and last < slow:
+        raw = -1
+    else:
+        raw = 0
+    if raw != int(s[RISK_PENDING]):
+        s[RISK_PENDING] = raw
+        s[RISK_PENDING_AT] = ts
+    if raw == current or ts-s[RISK_PENDING_AT] < q[RISK_CONFIRM]*60000:
+        return
+    s[RISK_REGIME] = raw
+    s[RISK_SWITCHES] += 1
+    clear_adds(s)
+    if raw == 0:
+        return
+    opposite = -raw
+    if q[RISK_CLOSE_OPPOSITE] > 0 and (s[QL] if opposite == 1 else s[QS]) > 0:
+        close_side(s, opposite, price, ts, p, q, False, 1)
+        s[RISK_CLOSES] += 1
+    if raw == 1:
+        s[BEST_L] = mark
+    else:
+        s[BEST_S] = mark
+
+
+@njit(cache=True)
 def fmz_core(times, bars, funding, news, minute_index, features, p, q, path_mode=0, stride=0):
     s = np.zeros(FMZ_STATE_SIZE)
     s[W] = s[PEAK] = s[MINEQ] = p[0]
@@ -349,6 +408,7 @@ def fmz_core(times, bars, funding, news, minute_index, features, p, q, path_mode
         s[FUND] += payment
         fmz_risk(s, b[0], b[4], ts, p, q)
         ready = update_controller(s, features[minute_index[i]], b[0], b[4], ts, p, q)
+        update_risk_guard(s, features[minute_index[i]], b[0], b[4], ts, p, q)
         if q[JEV_ACTION] > 0 and news[i, 0] >= q[JEV_THRESHOLD] and news[i, 0] > 0:
             s[JEV_ACTIONS] += 1
             s[NEWS_UNTIL] = max(s[NEWS_UNTIL], ts+q[JEV_HOLD]*1000)
@@ -358,27 +418,32 @@ def fmz_core(times, bars, funding, news, minute_index, features, p, q, path_mode
                     flatten(s, b[0], ts, p, 1)
                     clear_quotes(s)
                 s[RESUME] = max(s[RESUME], s[NEWS_UNTIL])
-            elif q[JEV_ACTION] == 2 and abs(news[i, 1]) >= q[JEV_DIRECTION]:
+            elif q[JEV_ACTION] in (2, 4) and abs(news[i, 1]) >= q[JEV_DIRECTION]:
                 direction = 1 if news[i, 1] > 0 else -1
                 s[NEWS_DIR] = direction
                 if (s[QL] if direction == -1 else s[QS]) > 0:
                     close_side(s, -direction, b[0], ts, p, q, False, 1)
                     s[JEV_LEG_CLOSES] += 1
-            if s[NEWS_DIR]:
+            if s[NEWS_DIR] and q[JEV_ACTION] == 2:
                 clear_adds(s, -int(s[NEWS_DIR]))
             else:
                 clear_adds(s)
         blocked_news = ts < s[NEWS_UNTIL] and q[JEV_ACTION] > 0
         allowed = np.zeros(2, dtype=np.bool_)
+        risk_regime = int(s[RISK_REGIME]) if q[RISK_GUARD] > 0 else 0
         for idx in range(2):
             side = 1 if idx == 0 else -1
             allowed[idx] = ready and s[HALT] == 0 and ts >= s[RESUME] and (s[REGIME] == 0 or s[REGIME] == side)
-            if blocked_news and (q[JEV_ACTION] in (1, 3) or s[NEWS_DIR] == 0 or s[NEWS_DIR] != side):
+            if risk_regime != 0 and risk_regime != side:
+                if allowed[idx]:
+                    s[RISK_VETOES] += 1
+                allowed[idx] = False
+            if blocked_news and (q[JEV_ACTION] in (1, 3, 4) or s[NEWS_DIR] == 0 or s[NEWS_DIR] != side):
                 if allowed[idx]:
                     s[JEV_VETOES] += 1
                 allowed[idx] = False
         target = max(equity(s, b[4])*q[RATE], q[BASEMIN])*q[RATIO]
-        qty = order_qty(target, b[0], ts, p)
+        qty = fmz_order_qty(target, b[0], ts, p, q)
         if s[QL]+s[QS] == 0 and allowed[0] and allowed[1] and ts >= max(s[READY_L], s[READY_S]):
             # Two initial legs must fit atomically, including costs and slippage.
             budget = (s[W]-2*qty*b[0]*(p[19]+p[20]/10000))*p[1]*p[2]
@@ -396,7 +461,8 @@ def fmz_core(times, bars, funding, news, minute_index, features, p, q, path_mode
                         open_side(s, side, b[0], b[4], ts, p, q, qty)
         for idx in range(2):
             side = 1 if idx == 0 else -1
-            may_add = allowed[idx] or (q[COUNTERADD] and s[REGIME] in (-1, 1) and not blocked_news and s[HALT] == 0 and ts >= s[RESUME])
+            risk_add_allowed = risk_regime == 0 or risk_regime == side
+            may_add = (allowed[idx] or (q[COUNTERADD] and s[REGIME] in (-1, 1) and not blocked_news and s[HALT] == 0 and ts >= s[RESUME])) and risk_add_allowed
             refresh_quotes(s, side, b[0], ts, p, q, may_add, b[4])
         if s[QL]+s[QS] > 0:
             if path_mode == 0:
@@ -442,7 +508,10 @@ def fmz_vectors(cfg):
         EMA_WINDOWS.index(cfg.ema_slow_minutes), cfg.trend_enter, cfg.trend_exit_fraction,
         cfg.trend_confirm_minutes, cfg.trend_liquidate_opposite, cfg.allow_countertrend_add,
         cfg.directional_stop, cfg.directional_trail, cfg.jev_action, cfg.jev_breakout_threshold,
-        cfg.jev_direction_threshold, cfg.jev_hold_seconds, cfg.poll_seconds], dtype=np.float64)
+        cfg.jev_direction_threshold, cfg.jev_hold_seconds, cfg.poll_seconds,
+        cfg.risk_guard, EMA_WINDOWS.index(cfg.risk_fast_minutes), EMA_WINDOWS.index(cfg.risk_slow_minutes),
+        cfg.risk_enter, cfg.risk_exit_fraction, cfg.risk_confirm_minutes,
+        cfg.risk_close_opposite, cfg.min_trade_notional], dtype=np.float64)
     return p, q
 
 
@@ -457,13 +526,17 @@ def backtest_fmz(data, cfg, start=None, end=None, record=False, path_mode=None):
     p, q = fmz_vectors(cfg)
     stride = (60 if data['resolution'] == '1s' else 1) if record else 0
     s, curve, decisions = fmz_core(*arrays, data['features'], p, q, cfg.intrabar_mode if path_mode is None else path_mode, stride)
-    result = {'initial_equity': 100., 'final_equity': float(s[W]), 'net_profit': float(s[W]-100),
-        'return_pct': float(s[W]-100), 'max_drawdown_pct': float(s[MAXDD]*100),
+    initial_equity = float(cfg.initial_equity)
+    result = {'initial_equity': initial_equity, 'final_equity': float(s[W]),
+        'net_profit': float(s[W]-initial_equity),
+        'return_pct': float((s[W]/initial_equity-1.)*100.), 'max_drawdown_pct': float(s[MAXDD]*100),
         'fees': float(s[FEES]), 'funding_net': float(s[FUND]), 'liquidations': int(s[LIQ]),
         'halted': bool(s[HALT]), 'fills': int(s[FILLS]), 'martingale_adds': int(s[MADDS]),
         'take_profit_fills': int(s[TPS]), 'cycles': int(s[CYCLES]), 'risk_stops': int(s[RSTOP]),
         'event_flatten_count': int(s[ESTOP]), 'jev_signals': int(s[JEV_ACTIONS]),
         'jev_forced_leg_closes': int(s[JEV_LEG_CLOSES]), 'jev_veto_checks': int(s[JEV_VETOES]),
+        'risk_guard_switches': int(s[RISK_SWITCHES]), 'risk_guard_closes': int(s[RISK_CLOSES]),
+        'risk_guard_veto_checks': int(s[RISK_VETOES]),
         'trend_entries': int(s[TREND_ENTRIES]), 'opposite_closes': int(s[CONTRA_CLOSES]),
         'regime_switches': int(s[SWITCHES]), 'post_tp_switches': int(s[POST_TP_SWITCHES]),
         'notional_cap_stops': int(s[CAP_STOPS]), 'directional_stops': int(s[DIR_STOPS]),

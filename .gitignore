@@ -15,6 +15,10 @@ build/
 dist/
 data/raw/
 data/processed/
+data/long_backtest_202406_202609/
+data/long_backtest_202309_202609/
+data/long_backtest_202309_202609_blockbeats/
+data/long_backtest_202406_202609_blockbeats/
 models/
 *.egg-info/
 

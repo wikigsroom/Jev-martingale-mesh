@@ -1,0 +1,106 @@
+{
+  "period": {
+    "start": "2023-09-25",
+    "end_exclusive": "2026-09-22"
+  },
+  "resolution": "1s",
+  "dataset_signature": "cce7404823163603360996e57cc8521c7966bc47fca14ce489f8169310b7f091",
+  "results": [
+    {
+      "label": "baseline_candidate2",
+      "params": {
+        "jev_action": 1,
+        "jev_breakout_threshold": 0.9,
+        "jev_direction_threshold": 0.25,
+        "jev_hold_seconds": 600
+      },
+      "final_equity": 1663.0082342074243,
+      "net_profit": 663.0082342074243,
+      "return_pct": 66.30082342074242,
+      "max_drawdown_pct": 54.84127669949136,
+      "min_equity": 609.5205345297272,
+      "fees": 1308.44987330263,
+      "funding_net": -6.96714564494752,
+      "fills": 1625,
+      "martingale_adds": 721,
+      "risk_stops": 442,
+      "liquidations": 0,
+      "jev_signals": 0,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 0,
+      "turnover": 3232014.6644852557
+    },
+    {
+      "label": "action2_t025_d010_h300",
+      "params": {
+        "jev_action": 2,
+        "jev_breakout_threshold": 0.25,
+        "jev_direction_threshold": 0.1,
+        "jev_hold_seconds": 300.0
+      },
+      "final_equity": 1440.2812864474827,
+      "net_profit": 440.28128644748267,
+      "return_pct": 44.02812864474828,
+      "max_drawdown_pct": 62.86916688807892,
+      "min_equity": 501.16574588053777,
+      "fees": 1107.1953564090009,
+      "funding_net": -3.327203088536005,
+      "fills": 1730,
+      "martingale_adds": 716,
+      "risk_stops": 428,
+      "liquidations": 0,
+      "jev_signals": 55450,
+      "jev_forced_leg_closes": 69,
+      "jev_veto_checks": 834319,
+      "turnover": 2658801.617417999
+    },
+    {
+      "label": "action1_t040_h900",
+      "params": {
+        "jev_action": 1,
+        "jev_breakout_threshold": 0.4,
+        "jev_direction_threshold": 0.25,
+        "jev_hold_seconds": 900.0
+      },
+      "final_equity": 1503.8590412018127,
+      "net_profit": 503.8590412018127,
+      "return_pct": 50.385904120181266,
+      "max_drawdown_pct": 55.22726308366737,
+      "min_equity": 604.3107630833873,
+      "fees": 1335.99383281854,
+      "funding_net": -5.9763548515202,
+      "fills": 1703,
+      "martingale_adds": 753,
+      "risk_stops": 439,
+      "liquidations": 0,
+      "jev_signals": 402,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 0,
+      "turnover": 3301179.768937073
+    },
+    {
+      "label": "action3_t025_h180",
+      "params": {
+        "jev_action": 3,
+        "jev_breakout_threshold": 0.25,
+        "jev_direction_threshold": 0.25,
+        "jev_hold_seconds": 180.0
+      },
+      "final_equity": 1976.242926455519,
+      "net_profit": 976.242926455519,
+      "return_pct": 97.6242926455519,
+      "max_drawdown_pct": 55.879536673674664,
+      "min_equity": 595.506835111482,
+      "fees": 1464.1982362045014,
+      "funding_net": -7.16621543522195,
+      "fills": 1631,
+      "martingale_adds": 711,
+      "risk_stops": 450,
+      "liquidations": 0,
+      "jev_signals": 55450,
+      "jev_forced_leg_closes": 0,
+      "jev_veto_checks": 563245,
+      "turnover": 3541362.3446690054
+    }
+  ]
+}

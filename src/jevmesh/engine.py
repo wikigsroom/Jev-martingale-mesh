@@ -90,7 +90,7 @@ def check_risk(s, trade_price, mark, ts, p):
         s[HALT] = 1
         track(s, mark)
         return True
-    hard_dd = eq <= s[PEAK]*(1-p[12])
+    hard_dd = p[12] > 0 and eq <= s[PEAK]*(1-p[12])
     if (s[CW] > 0 and eq <= s[CW]*(1-p[8])) or hard_dd:
         flatten(s, trade_price, ts, p, 2)
         if hard_dd:
@@ -153,7 +153,7 @@ def segment(s, start, end, mstart, mend, ts, p, added, closed):
                 a, b = eq0-gross0*p[21], eq1-gross1*p[21]
             elif risk_kind == 1 and s[CW] > 0:
                 a, b = eq0-s[CW]*(1-p[8]), eq1-s[CW]*(1-p[8])
-            elif risk_kind == 2:
+            elif risk_kind == 2 and p[12] > 0:
                 a, b = eq0-s[PEAK]*(1-p[12]), eq1-s[PEAK]*(1-p[12])
             else:
                 continue
