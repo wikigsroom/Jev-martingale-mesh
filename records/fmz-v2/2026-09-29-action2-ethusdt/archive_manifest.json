@@ -1,0 +1,59 @@
+{
+  "archive_id": "ETHUSDT-ACTION2-20260929",
+  "created_date": "2026-09-29",
+  "git_head_before_archive": "b68438104e60e54c1dad665240c79f35d46ab898",
+  "remote": "origin",
+  "branch": "main",
+  "symbol": "ETHUSDT",
+  "resolution": "1s",
+  "dataset_signature": "42a2ead2d2c80a1fce404526e6bdcd30b86ed5bd891a172602ce78f24ee3d3ad",
+  "backtest_end_exclusive_utc": "2026-09-22T00:00:00Z",
+  "raw_data_included": false,
+  "source_files": {
+    "backtest_1_3_6_12_24_36m_1s.json": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/action2_1_3_6_12_24_36m_1s_rerun.json",
+    "full_cycle_liquidation_recheck.json": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/full_cycle_action2_liquidation_recheck.json",
+    "daily_curve.json": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/action2_36m_daily_curve.json",
+    "daily_curve.csv": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/action2_36m_daily_curve.csv",
+    "event_tuning_report.md": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/EVENT_TUNING_REPORT.md",
+    "historical_action2_screen.json": "reports/ethusdt_tuning_1m/corrected_1s_retune_20260927/event_action_long_1s.json",
+    "action2_position_equity.html": "C:/Users/carzy/.codex/visualizations/2026/09/23/01a0ce63-a653-73f0-b04d-05b570cbca78/action2-position-equity.html"
+  },
+  "archived_files": {
+    "action2_parameters.json": {
+      "bytes": 2190,
+      "sha256": "9579c9ebb4db8666ad172f7ecabea99d8429b261f84ba6c035974896d28322e6"
+    },
+    "action2_position_equity.html": {
+      "bytes": 177805,
+      "sha256": "08ad43b53ddea8af809a3e0cb5d6abb5de621d1f6f60672fab4efe3b0d691294"
+    },
+    "backtest_1_3_6_12_24_36m_1s.json": {
+      "bytes": 9587,
+      "sha256": "c26673d48cae795b0ecac0165e687f65edec9bdcc1bbd52d699b523817959ae7"
+    },
+    "daily_curve.csv": {
+      "bytes": 201857,
+      "sha256": "277980b3164273b3158707ca376d985fd95ffdd275200fbccb0249a5901ca6dd"
+    },
+    "daily_curve.json": {
+      "bytes": 601034,
+      "sha256": "6ab9c9277909aa300fdd28bd2aa242125c9ca02a4968c4248df34c77c7eefe33"
+    },
+    "event_tuning_report.md": {
+      "bytes": 4217,
+      "sha256": "6c84817efb2564451942855e86efbaa665b26cefa447825f1091f09b8772cb0b"
+    },
+    "full_cycle_liquidation_recheck.json": {
+      "bytes": 1669,
+      "sha256": "c94ceb4e86f415d0ea08ea7651b29ae91145ecadd0f316c740bddacfb5edbc46"
+    },
+    "historical_action2_screen.json": {
+      "bytes": 4240,
+      "sha256": "5820d09b2c068f474d9fe10bd38946c145938050d3dc2b28d65b55437889bb3e"
+    },
+    "README.md": {
+      "bytes": 2492,
+      "sha256": "0fc18ac341044691fe73eb7a04e3254ee379978dd87361bf43b82bfa780d5cd2"
+    }
+  }
+}
