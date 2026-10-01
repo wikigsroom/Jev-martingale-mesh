@@ -19,6 +19,7 @@ data/long_backtest_202406_202609/
 data/long_backtest_202309_202609/
 data/long_backtest_202309_202609_blockbeats/
 data/long_backtest_202406_202609_blockbeats/
+data/long_backtest_eth_202309_202609/
 models/
 *.egg-info/
 
@@ -51,3 +52,9 @@ reports/fmz_v2/search_1/
 reports/fmz_v2/search_2/
 reports/fmz_v2/search_final/
 reports/fmz_v2/search_verified/
+
+# The dynamic-grid archive carries compact audit traces; keep local replay curves out of Git.
+experiments/jev_dynamic_grid_20261002/reports/final_36m_curve_60s.csv
+experiments/jev_dynamic_grid_20261002/reports/final_36m_decision_trace.csv
+experiments/jev_dynamic_grid_20261002/reports/final_36m_jev_events.csv
+experiments/jev_dynamic_grid_20261002/reports/curves/

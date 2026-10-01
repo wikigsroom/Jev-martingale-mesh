@@ -2,6 +2,48 @@
 
 ## 当前冻结方案
 
+- **正式方案名**：`ETHUSDT 常规费率 JEV 光谱动态网格方案`
+- **机器可读名称**：`ETHUSDT-RU-JEV-SPECTRAL-DYNAMIC-GRID-1S-V1`
+- **归档编号**：`ETHUSDT-REGULAR-USER-JEV-SPECTRAL-DYNAMIC-GRID-1S-20261002`
+- **记录日期**：`2026-10-02`
+- **归档状态**：已冻结、已生成压缩备份；本次归档随当前提交推送 GitHub
+
+### 方案口径
+
+- 标的：`ETHUSDT`
+- 执行分辨率：`1 秒`
+- 初始权益：`1,000 U`
+- 最低名义金额：`130 U`
+- 动态网格：开启；基于已完成分钟波动率、趋势压力和 JEV 事件压力实时调整
+- 网格范围：`0.5%` 至 `5.0%`；止盈距离为当前网格的 `75%`
+- 最大加仓：`2` 层；账户回撤停机关闭
+- JEV：ETHUSDT walk-forward 校准事件头，`5 秒`可用延迟，事件压力参与网格和新增交易门控
+- Binance Regular User Maker / Taker：`0.0200% / 0.0500%`
+- 主动成交滑点：`2 bp`
+
+### 36 个月结果
+
+- 期末权益：`2,290,664.03 U`
+- 收益率：`+228,966.403%`
+- 最大回撤：`13.626%`
+- 成交 / 加仓：`6,092 / 970`
+- JEV 事件 / 网格更新：`122,060 / 5,760`
+- 手续费 / 资金费净额：`153,771.28 U / -385.62 U`
+- 强平：`0`
+
+### 文件位置
+
+- **归档目录**：`records/fmz-v2/2026-10-02-ethusdt-jev-spectral-dynamic-grid-1s-v1/`
+- **压缩备份**：`records/fmz-v2/ETHUSDT-REGULAR-USER-JEV-SPECTRAL-DYNAMIC-GRID-1S-20261002.zip`
+- **参数文件**：`records/fmz-v2/2026-10-02-ethusdt-jev-spectral-dynamic-grid-1s-v1/strategy_parameters.json`
+- **完整性清单**：`records/fmz-v2/2026-10-02-ethusdt-jev-spectral-dynamic-grid-1s-v1/archive_manifest.json`
+
+后续提到“ETHUSDT 常规费率 JEV 光谱动态网格方案”或
+`ETHUSDT-RU-JEV-SPECTRAL-DYNAMIC-GRID-1S-V1`，均指向本次冻结归档。
+如需修改参数，应创建新的版本名和新的归档编号，不覆盖本版本。
+
+## 历史冻结方案
+
 - **正式方案名**：`ETHUSDT 常规费率 JEV-A3 固定网格风险闸门方案`
 - **机器可读名称**：`ETHUSDT-RU-A3-FIXED-GRID-GATE-H180-S1-2BP-V1`
 - **归档编号**：`ETHUSDT-REGULAR-USER-ACTION3-FIXED-GRID-GATE-H180-2BP-20261002`
@@ -45,7 +87,7 @@
 后续提到“ETHUSDT 常规费率 JEV-A3 固定网格风险闸门方案”或
 `ETHUSDT-RU-A3-FIXED-GRID-GATE-H180-S1-2BP-V1`，均指向本次冻结归档。
 如需修改参数，应创建新的版本名和新的归档编号，不覆盖本版本。
-## 历史冻结方案
+## 更早历史冻结方案
 
 - **正式方案名**：`ETHUSDT 常规费率 JEV-A2 动态无加仓方案`
 - **机器可读名称**：`ETHUSDT-RU-A2-DYN-NOADD-H1800-S1-2BP-V1`
